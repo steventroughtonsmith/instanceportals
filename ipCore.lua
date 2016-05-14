@@ -35,7 +35,6 @@ end
 function IPUIHideAllPins()
 	for i = 1, #IPUIPinFrames do
 		IPUIPinFrames[i]:Hide()
-		--table.remove(IPUIPinFrames,i)
 	end
 
 	wipe(IPUIPinFrames)
@@ -72,7 +71,7 @@ function IPUIMapTooltipSetup()
 	)
 end
 
-function IPUIShowPin(locationIndex) --x, y, type)
+function IPUIShowPin(locationIndex)
 	instancePortal = IPUIPinDB[GetCurrentMapAreaID()][locationIndex]
 
 	if not (instancePortal) then
