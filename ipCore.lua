@@ -71,6 +71,26 @@ function IPUIMapTooltipSetup()
 	)
 end
 
+
+function IPUIFindInstanceByName(name, isRaid)
+   if isRaid == nil then
+      local id = findInstanceByName(name, true)
+      if not id then id = findInstanceByName(name, false) end
+      return id
+   end
+   
+   local i = 1
+   local instanceId,instanceName = EJ_GetInstanceByIndex(i, isRaid)
+   name = name:lower()
+   
+   while instanceId do
+      if name == instanceName:lower() then return instanceId end
+      i = i + 1
+      instanceId, instanceName = EJ_GetInstanceByIndex(i, isRaid)        
+   end
+   return nil
+end
+
 function IPUIShowPin(locationIndex)
 	instancePortal = IPUIPinDB[GetCurrentMapAreaID()][locationIndex]
 
@@ -155,7 +175,24 @@ function IPUIShowPin(locationIndex)
 			function(self, button)
 				if (button == "LeftButton") then
 					if (#subInstanceMapIDs == 1) then
-						SetMapByID(subInstanceMapIDs[1])
+						if(not EncounterJournal) then
+							LoadAddOn("Blizzard_EncounterJournal")
+						end
+
+						local name = IPUIInstanceMapDB[subInstanceMapIDs[1]][1]
+						local tier = IPUIInstanceMapDB[subInstanceMapIDs[1]][4]
+
+						if ((tier <= 3) and (type == 2)) then -- no journal for Vanilla, TBC & WotLK raids
+							SetMapByID(subInstanceMapIDs[1])
+						else
+							ToggleEncounterJournal()
+							EJ_SelectTier(tier) -- have to select expansion tier before we can query details or select
+							local instanceID = IPUIFindInstanceByName(name, (type == 2))
+
+							IPUIPrintDebug("Loading instance: "..instanceID.." for name: "..name)
+
+							EncounterJournal_ResetDisplay(instanceID, -1, -1)
+						end
 					end
 				end
 			end
