@@ -209,8 +209,8 @@ IPUIPinDB = {
 	},
 	
 	[499]={ --[[ Quel'danas ]]--
-		{40.4, 46.4, {789}}, -- sunwell plateau
-		{60.2, 27.5, {798}}, -- magisters terrace
+		{43.98, 46.25, {789}}, -- sunwell plateau
+		{60.7, 30.55, {798}}, -- magisters terrace
 	},
 	
 	
