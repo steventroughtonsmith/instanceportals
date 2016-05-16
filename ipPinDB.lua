@@ -1,7 +1,7 @@
 IPUIPinDB = {
 	
 	[13]={ --[[ KALIMDOR ]]--
-		{58.91, 85.31, {734,733,521,816,819,820,775,824}}, -- caverns of time
+		{58.91, 85.31, {734,733,521,816,819,820,775,824}, "Caverns of Time"}, -- caverns of time
 		{53.43, 36.49, {800}}, --firelands
 		{50.49, 94.50, {747}}, --lost city tol'vir
 		{51.26, 92.58, {759}}, --halls of origination
@@ -28,8 +28,8 @@ IPUIPinDB = {
 	
 	[14]={ --[[ EASTERN KINGDOMS ]]--
 		{50.87, 36.87, {898}}, --scholomance
-		{46.15, 31.12, {871, 874}}, --scarlet monastery
-		{46.79, 69.61, {704, 721, 753, 995, 755, 696, 754}}, --blackrock mountain
+		{46.15, 31.12, {871, 874}, "Scarlet Monastery"}, --scarlet monastery
+		{46.79, 69.61, {704, 721, 753, 995, 755, 696, 754}, "Blackrock Mountain"}, --blackrock mountain
 		{47.94, 84.93, {793}}, --zul'gurub
 		{57.26, 25, {781}}, --zul'aman
 		{31.85, 61.76, {767}}, --throne of the tides
@@ -134,16 +134,16 @@ IPUIPinDB = {
 	
 	
 	[20]={ --[[ Tirisfall Glades ]]--
-		{83, 30, {871, 874}}, --scarlet monastery
+		{83, 30, {871, 874}, "Scarlet Monastery"}, --scarlet monastery
 	},
 	
 	[29]={ --[[ Burning Steppes ]]--
-		{20.49, 35.34, {704, 721, 753, 995, 755, 696, 754}}, --blackrock mountain
+		{20.49, 35.34, {704, 721, 753, 995, 755, 696, 754}, "Blackrock Mountain"}, --blackrock mountain
 	},
 	
 	[161]={ --[[ Tanaris ]]--
 		{39.39, 20.98, {686}}, -- zul'farrak
-		{64.40, 47.97, {734,733,521,816,819,820,775,824}}, -- caverns of time
+		{64.40, 47.97, {734,733,521,816,819,820,775,824}, "Caverns of Time"}, -- caverns of time
 	},
 	
 	
@@ -161,8 +161,8 @@ IPUIPinDB = {
 	},
 	
 	[466]={ --[[ OUTLAND ]]--
-		{55.72, 53.33, {797, 725, 710, 779}}, -- hellfire ramparts, blood furnace, shattered halls, magtheridons lair
-		{34.54, 44.91, {728, 726, 727, 780}}, --slave pens, underbog, steamvault, serpentshrine cavern
+		{55.72, 53.33, {797, 725, 710, 779}, "Hellfire Citadel"}, -- hellfire ramparts, blood furnace, shattered halls, magtheridons lair
+		{34.54, 44.91, {728, 726, 727, 780}, "Coilfang Reservoir"}, --slave pens, underbog, steamvault, serpentshrine cavern
 		{72.83, 81.48, {796}}, -- black temple
 		{43.85, 19.45, {776}}, -- gruuls lair
 		{44.62, 78.80, {722}}, -- auchenai crypts
@@ -177,11 +177,11 @@ IPUIPinDB = {
 	
 	
 	[465]={ --[[ Hellfire Penninsula ]]--
-		{46.79, 51.80, {797, 725, 710, 779}}, -- hellfire ramparts, blood furnace, shattered halls, magtheridons lair
+		{46.79, 51.80, {797, 725, 710, 779}, "Hellfire Citadel"}, -- hellfire ramparts, blood furnace, shattered halls, magtheridons lair
 	},
 	
 	[467]={ --[[ Zangarmarsh ]]--
-		{49.98, 40.70, {728, 726, 727, 780}}, --slave pens, underbog, steamvault, serpentshrine cavern
+		{49.98, 40.70, {728, 726, 727, 780}, "Coilfang Reservoir"}, --slave pens, underbog, steamvault, serpentshrine cavern
 	},
 	
 	[473]={ --[[ Shadowmoon Valley ]]--
@@ -218,14 +218,14 @@ IPUIPinDB = {
 	[485]={ --[[ NORTHREND ]]--
 		{64.15, 55.44, {534}}, --draktharon keep
 		{77.55, 30.74, {530}}, --gundrak
-		{11.94, 57.16, {520, 528, 527}}, --nexus, oculus, eye of eternity
-		{41, 57.74, {533,522}}, -- azjol-nerub,ahnkahet
+		{11.94, 57.16, {520, 528, 527}, "The Nexus"}, --nexus, oculus, eye of eternity
+		{41, 57.74, {533,522}, "Azjol-Nerub"}, -- azjol-nerub,ahnkahet
 		{58.53, 53.33, {535}}, --naxxramas
-		{50.36, 55.44, {531,609}}, --wymrest temple
+		{50.36, 55.44, {531,609}, "Wyrmrest Temple"}, --wymrest temple
 		{80.36, 77.27, {523}}, --utgarde keep
 		{80.49, 74, {524}}, --utgarde pinnacle
 		
-		{36.32, 37.63, {601, 602, 603}}, --forge of souls, pit of saron, halls of reflection
+		{36.32, 37.63, {601, 602, 603}, "Icecrown Citadel"}, --forge of souls, pit of saron, halls of reflection
 		{45, 18.3, {542}}, --trial of champion
 		{46.79, 19.64, {543}}, --trial of crusader
 		{38.24, 36.10, {604}}, --ICC
@@ -249,13 +249,13 @@ IPUIPinDB = {
 	},
 	
 	[486]={ --[[ Borean Tundra ]]--
-		{27, 25.96, {520, 528, 527}}, --nexus, oculus, eye of eternity
+		{27, 25.96, {520, 528, 527}, "The Nexus"}, --nexus, oculus, eye of eternity
 	},
 	
 	[488]={ --[[ Dragonblight ]]--
-		{26.8, 48.5, {533,522}}, -- azjol-nerub,ahnkahet
+		{26.8, 48.5, {533,522}, "Azjol-Nerub"}, -- azjol-nerub,ahnkahet
 		{87.4, 46.4, {535}}, --naxxramas
-		{60, 56, {531,609}}, --wymrest temple
+		{60, 56, {531,609}, "Wyrmrest Temple"}, --wymrest temple
 	},
 	
 	[491]={ --[[ Howling Fjord ]]--
@@ -265,7 +265,7 @@ IPUIPinDB = {
 	
 	[492]={ --[[ Icecrown ]]--
 		
-		{51.4, 88.3, {601, 602, 603}}, --forge of souls, pit of saron, halls of reflection
+		{51.4, 88.3, {601, 602, 603}, "Icecrown Citadel"}, --forge of souls, pit of saron, halls of reflection
 		{74, 20.9, {542}}, --trial of champion
 		{75.2, 21.9, {543}}, --trial of crusader
 		{53.4, 85.8, {604}}, --ICC
@@ -464,7 +464,7 @@ IPUIInstanceMapDB = {
 	 [797]={"Hellfire Ramparts", 1, 57, 2},
 	 [798]={"Magisters' Terrace", 1, 65, 2},
 	 [732]={"Mana-Tombs", 1, 61, 2},
-	 [734]={"Escape from Durnholde Keep", 1, 63, 2},
+	 [734]={"Old Hillsbrad Foothills", 1, 63, 2},
 	 [723]={"Sethekk Halls", 1, 63, 2},
 	 [724]={"Shadow Labyrinth", 1, 65, 2},
 	 [731]={"The Arcatraz", 1, 65, 2},

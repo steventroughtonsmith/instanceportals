@@ -21,8 +21,11 @@ function InstancePortalUI_OnLoad(self)
 	self:RegisterEvent("WORLD_MAP_NAME_UPDATE")
 	self:SetScript("OnEvent", IPUIEventHandler)
 
-	IPUIPrintDebug("InstancePortalUI_OnLoad()")
+	if(not EncounterJournal) then
+		LoadAddOn("Blizzard_EncounterJournal")
+	end
 
+	IPUIPrintDebug("InstancePortalUI_OnLoad()")
 	IPUIMapTooltipSetup()
 end
 
@@ -91,6 +94,24 @@ function IPUIFindInstanceByName(name, isRaid)
    return nil
 end
 
+function IPUIShowInstance(subInstanceMapIDs, index)
+	local name = IPUIInstanceMapDB[subInstanceMapIDs[index]][1]
+	local type = IPUIInstanceMapDB[subInstanceMapIDs[index]][2]
+	local tier = IPUIInstanceMapDB[subInstanceMapIDs[index]][4]
+
+	if ((tier <= 3) and (type == 2)) then -- no journal for Vanilla, TBC & WotLK raids
+		SetMapByID(subInstanceMapIDs[index])
+	else
+		ToggleEncounterJournal()
+		EJ_SelectTier(tier) -- have to select expansion tier before we can query details or select
+		local instanceID = IPUIFindInstanceByName(name, (type == 2))
+
+		IPUIPrintDebug("Loading instance: "..instanceID.." for name: "..name)
+
+		EncounterJournal_ResetDisplay(instanceID, -1, -1)
+	end
+end
+
 function IPUIShowPin(locationIndex)
 	instancePortal = IPUIPinDB[GetCurrentMapAreaID()][locationIndex]
 
@@ -101,8 +122,8 @@ function IPUIShowPin(locationIndex)
 
 	local x = instancePortal[1]
 	local y = instancePortal[2]
-
 	local subInstanceMapIDs = instancePortal[3]
+	local hubName = instancePortal[4]
 
 	local type = IPUIInstanceMapDB[subInstanceMapIDs[1]][2]
 
@@ -142,14 +163,15 @@ function IPUIShowPin(locationIndex)
 				IPUIMapTooltip:ClearLines()
 				IPUIMapTooltip:SetScale(GetCVar("uiScale"))
 				if (#subInstanceMapIDs > 1) then
-					IPUIMapTooltip:AddLine("Hub")
+					IPUIMapTooltip:AddLine(hubName)
 				end
 					for i = 1, #subInstanceMapIDs do
 						local name = IPUIInstanceMapDB[subInstanceMapIDs[i]][1]
 						local type = IPUIInstanceMapDB[subInstanceMapIDs[i]][2]
 						local requiredLevel = IPUIInstanceMapDB[subInstanceMapIDs[i]][3]
+						local tier = IPUIInstanceMapDB[subInstanceMapIDs[i]][4]
 
-						IPUIMapTooltip:AddDoubleLine(string.format("|cffffffff%s|r",name), string.format("|cffff7d0a[%d]|r", requiredLevel))
+						IPUIMapTooltip:AddDoubleLine(string.format("|cffffffff%s|r",name), string.format("|cffff7d0a%d|r", requiredLevel))
 						if (type == 1) then
 							IPUIMapTooltip:AddTexture("Interface\\Addons\\InstancePortals\\Images\\IPDungeon")
 						else
@@ -175,24 +197,20 @@ function IPUIShowPin(locationIndex)
 			function(self, button)
 				if (button == "LeftButton") then
 					if (#subInstanceMapIDs == 1) then
-						if(not EncounterJournal) then
-							LoadAddOn("Blizzard_EncounterJournal")
+						IPUIShowInstance(subInstanceMapIDs, 1)
+					else
+						local menu = {
+							{ text = hubName, isTitle = true},
+						}
+						for i = 1, #subInstanceMapIDs do
+							local name = IPUIInstanceMapDB[subInstanceMapIDs[i]][1]
+							local line = { text = name, notCheckable = true, func = function() IPUIShowInstance(subInstanceMapIDs, i); end }
+
+							table.insert(menu, line)
 						end
 
-						local name = IPUIInstanceMapDB[subInstanceMapIDs[1]][1]
-						local tier = IPUIInstanceMapDB[subInstanceMapIDs[1]][4]
-
-						if ((tier <= 3) and (type == 2)) then -- no journal for Vanilla, TBC & WotLK raids
-							SetMapByID(subInstanceMapIDs[1])
-						else
-							ToggleEncounterJournal()
-							EJ_SelectTier(tier) -- have to select expansion tier before we can query details or select
-							local instanceID = IPUIFindInstanceByName(name, (type == 2))
-
-							IPUIPrintDebug("Loading instance: "..instanceID.." for name: "..name)
-
-							EncounterJournal_ResetDisplay(instanceID, -1, -1)
-						end
+						local menuFrame = CreateFrame("Frame", "IPUISelectMenuFrame", UIParent, "UIDropDownMenuTemplate")
+						EasyMenu(menu, menuFrame, "cursor", 0 , 0, "MENU");
 					end
 				end
 			end
