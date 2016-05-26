@@ -272,8 +272,8 @@ IPUIPinDB = {
 	},
 	
 	[495]={ --[[ Storm Peaks ]]--
-		{38, 14.7, {525}}, --halls of lightning
-		{44.8, 14.5, {526}}, --halls of stone
+		{45.13, 19.78, {525}}, --halls of lightning
+		{37.73, 26.34, {526}}, --halls of stone
 		{41.5, 16.1, {529}}, --ulduar
 	},
 	
@@ -352,7 +352,7 @@ IPUIPinDB = {
 	},
 	
 	[806]={ --[[ The Jade Forest ]]--
-		{55, 55, {867}},
+		{56.03, 57.49, {867}}, -- jade serpent
 	},
 	
 	[807]={ --[[ Valley of the Four Winds ]]--
