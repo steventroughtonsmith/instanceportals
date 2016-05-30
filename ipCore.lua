@@ -56,8 +56,10 @@ function IPUIRefreshPins()
 	IPUIPrintDebug("IPUIRefreshPins for map: "..GetCurrentMapAreaID())
 
 	if ((GetCurrentMapDungeonLevel() == 0) or cityOverride) then
-		for i = 1, #IPUIPinDB[GetCurrentMapAreaID()] do
-			IPUIShowPin(i)
+		if IPUIPinDB[GetCurrentMapAreaID()] then
+			for i = 1, #IPUIPinDB[GetCurrentMapAreaID()] do
+				IPUIShowPin(i)
+			end
 		end
 	else
 		IPUIPrintDebug("No pins for this dungeon level")
@@ -99,7 +101,9 @@ function IPUIShowInstance(subInstanceMapIDs, index)
 	local type = IPUIInstanceMapDB[subInstanceMapIDs[index]][2]
 	local tier = IPUIInstanceMapDB[subInstanceMapIDs[index]][4]
 
-	if ((tier <= 3) and (type == 2)) then -- no journal for Vanilla, TBC & WotLK raids
+	version, internalVersion, date, uiVersion = GetBuildInfo()
+
+	if (uiVersion < 70000) and ((tier <= 3) and (type == 2)) then -- no journal for Vanilla, TBC & WotLK raids before 7.0
 		SetMapByID(subInstanceMapIDs[index])
 	else
 		ToggleEncounterJournal()
@@ -170,6 +174,12 @@ function IPUIShowPin(locationIndex)
 						local type = IPUIInstanceMapDB[subInstanceMapIDs[i]][2]
 						local requiredLevel = IPUIInstanceMapDB[subInstanceMapIDs[i]][3]
 						local tier = IPUIInstanceMapDB[subInstanceMapIDs[i]][4]
+
+						--local instanceID = IPUIFindInstanceByName(name, (type == 2))
+
+						--EJ_SelectTier(tier) -- have to select expansion tier before we can query details or select
+						--EncounterJournal_ResetDisplay(instanceID, -1, -1)
+						--IPUIDumpLootTable()
 
 						IPUIMapTooltip:AddDoubleLine(string.format("|cffffffff%s|r",name), string.format("|cffff7d0a%d|r", requiredLevel))
 						if (type == 1) then

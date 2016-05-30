@@ -424,6 +424,25 @@ IPUIPinDB = {
 	[950]={ --[[ Nagrand ]]--
 		{32.75, 34, {994}},
 	},
+	
+	
+	[1007]={ --[[ BROKEN ISLES ]]--
+	},
+	[1015]={ --[[ Azsuna ]]--
+	},
+	[1017]={ --[[ Stormheim ]]--
+	},
+	[1018]={ --[[ Val'sharah ]]--
+	},
+	[1021]={ --[[ Broken Shore ]]--
+	},
+	[1024]={ --[[ Highmountain ]]--
+	},
+	[1033]={ --[[ Suramar ]]--
+	},
+	[1096]={ --[[ Eye of Azshara ]]--
+	},
+
 }
 
 IPUIInstanceMapDB = {
