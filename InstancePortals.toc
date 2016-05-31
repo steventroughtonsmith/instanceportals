@@ -1,5 +1,5 @@
 ## Interface: 60100
-## Version: 4
+## Version: 5
 ## Title: Instance Portals
 ## Notes: Displays dungeon & raid portals on the world map
 
