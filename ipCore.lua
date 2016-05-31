@@ -44,6 +44,17 @@ function IPUIHideAllPins()
 end
 
 function IPUIRefreshPins()
+
+	local mapName, textureHeight, _, isMicroDungeon, microDungeonMapName = GetMapInfo();
+	if IPUIDebug and isMicroDungeon then
+		local dungeonLevel = GetCurrentMapDungeonLevel();
+		if (DungeonUsesTerrainMap()) then
+			dungeonLevel = dungeonLevel - 1;
+		end
+		IPUIPrintDebug("micro: "..microDungeonMapName)
+		IPUIPrintDebug("level: "..dungeonLevel)
+	end
+
 	IPUIHideAllPins()
 	if not (WorldMapFrame:IsVisible()) then return nil end
 
@@ -55,14 +66,27 @@ function IPUIRefreshPins()
 
 	IPUIPrintDebug("IPUIRefreshPins for map: "..GetCurrentMapAreaID())
 
-	if ((GetCurrentMapDungeonLevel() == 0) or cityOverride) then
-		if IPUIPinDB[GetCurrentMapAreaID()] then
-			for i = 1, #IPUIPinDB[GetCurrentMapAreaID()] do
+	if isMicroDungeon then
+		local dungeonLevel = GetCurrentMapDungeonLevel();
+		if (DungeonUsesTerrainMap()) then
+			dungeonLevel = dungeonLevel - 1;
+		end
+
+		if IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel] then
+			for i = 1, #IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel] do
 				IPUIShowPin(i)
 			end
 		end
 	else
-		IPUIPrintDebug("No pins for this dungeon level")
+		if ((GetCurrentMapDungeonLevel() == 0) or cityOverride) then
+			if IPUIPinDB[GetCurrentMapAreaID()] then
+				for i = 1, #IPUIPinDB[GetCurrentMapAreaID()] do
+					IPUIShowPin(i)
+				end
+			end
+		else
+			IPUIPrintDebug("No pins for this dungeon level")
+		end
 	end
 end
 
@@ -75,7 +99,6 @@ function IPUIMapTooltipSetup()
 		end
 	)
 end
-
 
 function IPUIFindInstanceByName(name, isRaid)
    if isRaid == nil then
@@ -117,7 +140,19 @@ function IPUIShowInstance(subInstanceMapIDs, index)
 end
 
 function IPUIShowPin(locationIndex)
-	instancePortal = IPUIPinDB[GetCurrentMapAreaID()][locationIndex]
+	local mapName, textureHeight, _, isMicroDungeon, microDungeonMapName = GetMapInfo();
+
+	if isMicroDungeon then
+
+		local dungeonLevel = GetCurrentMapDungeonLevel();
+		if (DungeonUsesTerrainMap()) then
+			dungeonLevel = dungeonLevel - 1;
+		end
+
+		instancePortal = IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel][locationIndex]
+	else
+		instancePortal = IPUIPinDB[GetCurrentMapAreaID()][locationIndex]
+	end
 
 	if not (instancePortal) then
 		IPUIPrintDebug("No pin "..locationIndex.." for map: "..GetCurrentMapAreaID())

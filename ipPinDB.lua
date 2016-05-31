@@ -445,6 +445,71 @@ IPUIPinDB = {
 
 }
 
+IPUIMicroDungeonPinDB = {
+	["BlackrockMountain"] = {
+		[14]={ -- blackrock spire
+			{78.83, 33.04, {995}}, -- UBRS
+			{81.51, 43.19, {721}}, -- LBRS
+			{63.89, 71.33, {755}}, -- BWL
+			{68.74, 63.48, {753}}, -- BRC (corridor)
+		},
+		[15]={ -- blackrock caverns
+			{74.10, 52.38, {753}}, -- BRC
+		},
+		[16]={ -- blackrock depths
+			{39.13, 17.72, {704}}, -- BRD
+			{53.55, 81.10, {696}}, -- MC
+		},
+	},
+	["ScarletMonasteryEntrance"] = {
+		[13]={
+			{68.23, 21.36, {874}}, -- SM
+			{79.34, 60.61, {871}}, -- SH
+		},
+	},
+	["CavernsofTime"] = {
+		[18]={
+			{26.49, 33.04, {734}}, -- old hillsbrad
+			{34.54, 85.31, {733}}, -- black morass
+			{60.7, 83, {521}}, -- culling of stratholme
+			{22.15, 63.87, {816}}, -- well of eternity
+			{68.49, 29.59, {819}}, -- hour of twilight
+			{57.26, 26.15, {820}}, -- end time
+			{39.64, 16.96, {775}}, -- battle for hyjal
+			{60.83, 20.98, {824}}, -- dragon soul
+		},
+	},
+	["WailingCavernsBarrens"] = {
+		[20]={
+			{54.7, 66.93, {749}},
+		},
+	},
+	["MaraudonOutside"] = {
+		[21]={
+			{78.83, 63.10, {750}},
+		},
+		[22]={
+			{58.15, 32.66, {750}},
+		},
+	},
+	["Gnomeregan"] = {
+		[10]={
+			{42.45, 13.13, {691}},
+			{29.56, 74.97, {691}},
+		},
+	},
+	["Uldaman"] = {
+		[18]={
+			{36.83, 28.44, {692}},
+		},
+	},
+	["DeadminesWestfall"] = {
+		[17]={
+			{25.09, 51.42, {756}},
+		},
+	},
+}
+
 IPUIInstanceMapDB = {
 	
 	--[[ Classic Dungeons ]]--
