@@ -21,12 +21,19 @@ function InstancePortalUI_OnLoad(self)
 	self:RegisterEvent("WORLD_MAP_NAME_UPDATE")
 	self:SetScript("OnEvent", IPUIEventHandler)
 
-	if(not EncounterJournal) then
-		LoadAddOn("Blizzard_EncounterJournal")
+	_, _, _, uiVersion = GetBuildInfo()
+	if (uiVersion < 70000) then
+		IPUILoadEJ()
 	end
 
 	IPUIPrintDebug("InstancePortalUI_OnLoad()")
 	IPUIMapTooltipSetup()
+end
+
+function IPUILoadEJ()
+	if(not EncounterJournal) then
+		LoadAddOn("Blizzard_EncounterJournal")
+	end
 end
 
 function IPUIPrintDebug(t)
@@ -72,9 +79,11 @@ function IPUIRefreshPins()
 			dungeonLevel = dungeonLevel - 1;
 		end
 
-		if IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel] then
-			for i = 1, #IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel] do
-				IPUIShowPin(i)
+		if IPUIMicroDungeonPinDB[microDungeonMapName] then
+			if IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel] then
+				for i = 1, #IPUIMicroDungeonPinDB[microDungeonMapName][dungeonLevel] do
+					IPUIShowPin(i)
+				end
 			end
 		end
 	else
@@ -91,8 +100,9 @@ function IPUIRefreshPins()
 end
 
 function IPUIMapTooltipSetup()
-	IPUIMapTooltip = CreateFrame("GameTooltip", "IPUIMapTooltip", WorldFrame, "GameTooltipTemplate")
+	IPUIMapTooltip = CreateFrame("GameTooltip", "IPUIMapTooltip", WorldMapFrame, "GameTooltipTemplate")
 	IPUIMapTooltip:SetFrameStrata("TOOLTIP")
+	IPUIMapTooltip:SetFrameLevel(WorldMapDetailFrame:GetFrameLevel()+11)
 	WorldMapFrame:HookScript("OnSizeChanged",
 		function(self)
 			IPUIMapTooltip:SetScale(1/self:GetScale())
@@ -124,7 +134,7 @@ function IPUIShowInstance(subInstanceMapIDs, index)
 	local type = IPUIInstanceMapDB[subInstanceMapIDs[index]][2]
 	local tier = IPUIInstanceMapDB[subInstanceMapIDs[index]][4]
 
-	version, internalVersion, date, uiVersion = GetBuildInfo()
+	_, _, _, uiVersion = GetBuildInfo()
 
 	if (uiVersion < 70000) and ((tier <= 3) and (type == 2)) then -- no journal for Vanilla, TBC & WotLK raids before 7.0
 		SetMapByID(subInstanceMapIDs[index])
@@ -173,7 +183,7 @@ function IPUIShowPin(locationIndex)
 	pin.Texture:SetAllPoints()
 	pin:EnableMouse(true)
 	pin:SetFrameStrata("HIGH")
-	pin:SetFrameLevel(WorldMapFrame.UIElementsFrame:GetFrameLevel())
+	pin:SetFrameLevel(WorldMapDetailFrame:GetFrameLevel()+10)
 
 	pin:SetPoint("CENTER", WorldMapDetailFrame, "TOPLEFT", (x / 100) * WorldMapDetailFrame:GetWidth(), (-y / 100) * WorldMapDetailFrame:GetHeight())
 
@@ -200,7 +210,7 @@ function IPUIShowPin(locationIndex)
 
 				IPUIMapTooltip:SetOwner(pin, "ANCHOR_RIGHT")
 				IPUIMapTooltip:ClearLines()
-				IPUIMapTooltip:SetScale(GetCVar("uiScale"))
+				IPUIMapTooltip:SetScale(WorldMapFrame:GetScale())
 				if (#subInstanceMapIDs > 1) then
 					IPUIMapTooltip:AddLine(hubName)
 				end
@@ -209,12 +219,6 @@ function IPUIShowPin(locationIndex)
 						local type = IPUIInstanceMapDB[subInstanceMapIDs[i]][2]
 						local requiredLevel = IPUIInstanceMapDB[subInstanceMapIDs[i]][3]
 						local tier = IPUIInstanceMapDB[subInstanceMapIDs[i]][4]
-
-						--local instanceID = IPUIFindInstanceByName(name, (type == 2))
-
-						--EJ_SelectTier(tier) -- have to select expansion tier before we can query details or select
-						--EncounterJournal_ResetDisplay(instanceID, -1, -1)
-						--IPUIDumpLootTable()
 
 						IPUIMapTooltip:AddDoubleLine(string.format("|cffffffff%s|r",name), string.format("|cffff7d0a%d|r", requiredLevel))
 						if (type == 1) then
