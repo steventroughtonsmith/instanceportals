@@ -564,7 +564,7 @@ IPUIInstanceMapDB = {
 	--[[ Burning Crusade Raids ]]--
 	
 	 [776]={"Gruul's Lair", 2, 70, 2},
-	 [775]={"Battle for Mount Hyjal", 2, 68, 2},
+	 [775]={"The Battle for Mount Hyjal", 2, 68, 2},
 	 [779]={"Magtheridon's Lair", 2, 70, 2},
 	 [780]={"Serpentshrine Cavern", 2, 70, 2},
 	 [782]={"The Eye", 2, 70, 2},
