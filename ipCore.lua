@@ -182,7 +182,7 @@ function IPUIShowPin(locationIndex)
 	pin.Texture:SetTexture("Interface\\Addons\\InstancePortals\\Images\\IPIcons")
 	pin.Texture:SetAllPoints()
 	pin:EnableMouse(true)
-	pin:SetFrameStrata("HIGH")
+	pin:SetFrameStrata("TOOLTIP")
 	pin:SetFrameLevel(WorldMapDetailFrame:GetFrameLevel()+10)
 
 	pin:SetPoint("CENTER", WorldMapDetailFrame, "TOPLEFT", (x / 100) * WorldMapDetailFrame:GetWidth(), (-y / 100) * WorldMapDetailFrame:GetHeight())
