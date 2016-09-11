@@ -3,7 +3,14 @@
 ## Version: 8
 ## Title: Instance Portals
 ## Notes: Displays dungeon & raid portals on the world map
+## Notes-zhCN: 在世界地图上显示地下城 & 团队副本入口
+## Notes-zhTW: 在世界地圖上顯示地城 & 團隊副本入口
+
+locales\base.lua
+locales\zhCN.lua
+locales\zhTW.lua
 
 ipPinDB.lua
 ipCore.lua
+
 InstancePortals.xml
