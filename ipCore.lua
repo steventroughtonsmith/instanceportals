@@ -116,21 +116,22 @@ function IPUIFindInstanceByName(name, isRaid)
       if not id then id = findInstanceByName(name, false) end
       return id
    end
-   
+
    local i = 1
    local instanceId,instanceName = EJ_GetInstanceByIndex(i, isRaid)
    name = name:lower()
-   
+
    while instanceId do
       if name == instanceName:lower() then return instanceId end
       i = i + 1
-      instanceId, instanceName = EJ_GetInstanceByIndex(i, isRaid)        
+      instanceId, instanceName = EJ_GetInstanceByIndex(i, isRaid)
    end
    return nil
 end
 
 function IPUIShowInstance(subInstanceMapIDs, index)
-	local name = IPUIInstanceMapDB[subInstanceMapIDs[index]][1]
+	local instanceID = IPUIInstanceMapDB[subInstanceMapIDs[index]][1]
+	local name = EJ_GetInstanceInfo(instanceID)
 	local type = IPUIInstanceMapDB[subInstanceMapIDs[index]][2]
 	local tier = IPUIInstanceMapDB[subInstanceMapIDs[index]][4]
 
@@ -141,7 +142,7 @@ function IPUIShowInstance(subInstanceMapIDs, index)
 	else
 		ToggleEncounterJournal()
 		EJ_SelectTier(tier) -- have to select expansion tier before we can query details or select
-		local instanceID = IPUIFindInstanceByName(name, (type == 2))
+		-- local instanceID = IPUIFindInstanceByName(name, (type == 2))
 
 		IPUIPrintDebug("Loading instance: "..instanceID.." for name: "..name)
 
@@ -215,10 +216,11 @@ function IPUIShowPin(locationIndex)
 					IPUIMapTooltip:AddLine(hubName)
 				end
 					for i = 1, #subInstanceMapIDs do
-						local name = IPUIInstanceMapDB[subInstanceMapIDs[i]][1]
+						local instanceID = IPUIInstanceMapDB[subInstanceMapIDs[i]][1]
 						local type = IPUIInstanceMapDB[subInstanceMapIDs[i]][2]
 						local requiredLevel = IPUIInstanceMapDB[subInstanceMapIDs[i]][3]
 						local tier = IPUIInstanceMapDB[subInstanceMapIDs[i]][4]
+						local name = EJ_GetInstanceInfo(instanceID)
 
 						IPUIMapTooltip:AddDoubleLine(string.format("|cffffffff%s|r",name), string.format("|cffff7d0a%d|r", requiredLevel))
 						if (type == 1) then
@@ -252,7 +254,8 @@ function IPUIShowPin(locationIndex)
 							{ text = hubName, isTitle = true},
 						}
 						for i = 1, #subInstanceMapIDs do
-							local name = IPUIInstanceMapDB[subInstanceMapIDs[i]][1]
+							local instanceID = IPUIInstanceMapDB[subInstanceMapIDs[i]][1]
+							local name = EJ_GetInstanceInfo(instanceID)
 							local line = { text = name, notCheckable = true, func = function() IPUIShowInstance(subInstanceMapIDs, i); end }
 
 							table.insert(menu, line)
