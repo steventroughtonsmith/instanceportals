@@ -37,7 +37,7 @@ IPUIPinDB = {
 		{55.6, 59.46, {758}}, --bastion of twilight
 		{35, 51.61, {752}}, --baradin hold
 
-		{49.85, 81.29, {799}}, -- karazhan
+		{49.85, 81.29, {799, 1115}, "Karazhan"}, -- karazhan
 
 
 		{54.7, 4.51, {789}}, -- sunwell plateau
@@ -151,6 +151,7 @@ IPUIPinDB = {
 
 	[42]={ --[[ Deadwind Pass ]]--
 		{45.13, 75.16, {799}}, -- karazhan
+		{47, 71, {1115}}, -- Return to Karazhan
 	},
 
 
@@ -427,6 +428,23 @@ IPUIPinDB = {
 
 
 	[619]={ --[[ BROKEN ISLES ]]--
+		{47, 66, {1066}}, --Assault on Violet Hold
+		{37, 26, {1067}}, --Darkheart Thicket
+		{36, 28, {1094}}, --Emerald Nightmare
+		{39, 57, {1046}}, --Eye of Azshara
+		{64, 38, {1041, 1114}, "Halls of Valor"}, --Trial of Valor
+		{47, 28, {1065}}, --Neltharion's Lair
+		{29, 36, {1081}}, --Black Rook Hold
+		{56, 60, {1146}}, --Cathedral of Eternal Night
+		{49, 50, {1087}}, --Court of Stars
+		{60, 31, {1042}}, --Maw of Souls
+		{47, 51, {1079}}, --The Arcway
+		{34, 72, {1045}}, --Vault of the Wardens
+		{48, 49, {1088}}, --The Nighthold
+		{56, 64, {1147}}, --Tomb of Sargeras
+
+		{90, 10, {1178}}, --Seat of the Triumvirate
+		{83, 22, {1188}}, --Antorus, the Burning Throne
 	},
 	[630]={ --[[ Azsuna ]]--
 	},
@@ -441,6 +459,11 @@ IPUIPinDB = {
 	[680]={ --[[ Suramar ]]--
 	},
 	[790]={ --[[ Eye of Azshara ]]--
+	},
+
+	[905]={ --[[ Argus ]]--
+		{52, 33, {1178}}, --Seat of the Triumvirate
+		{35, 64, {1188}}, --Antorus, the Burning Throne
 	},
 
 	--[[ Former MicroDungeons ]]--

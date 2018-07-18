@@ -150,4 +150,29 @@ IPUIInstanceMapDB = {
 	[988]={"Blackrock Foundry", 2, 100, 6},
 	[994]={"Highmaul", 2, 100, 6},
 	[1026]={"Hellfire Citadel", 2, 100, 6},
+
+	--[[ Legion ]]--
+
+
+	[1067]={"Darkheart Thicket", 1, 100, 7},
+	[1046]={"Eye of Azshara", 1, 100, 7},
+	[1041]={"Halls of Valor", 1, 100, 7},
+	[1065]={"Neltharion's Lair", 1, 100, 7},
+
+	[1066]={"Assault on Violet Hold", 1, 105, 7},
+
+	[1081]={"Black Rook Hold", 1, 110, 7},
+	[1146]={"Cathedral of Eternal Night", 1, 110, 7},
+	[1087]={"Court of Stars", 1, 110, 7},
+	[1042]={"Maw of Souls", 1, 110, 7},
+	[1115]={"Return to Karazhan", 1, 110, 7},
+	[1079]={"The Arcway", 1, 110, 7},
+	[1045]={"Vault of the Wardens", 1, 110, 7},
+	[1178]={"Seat of the Triumvirate", 1, 110, 7},
+
+	[1094]={"The Emerald Nightmare", 2, 110, 7},
+	[1114]={"Trial of Valor", 2, 110, 7},
+	[1088]={"The Nighthold", 2, 110, 7},
+	[1147]={"Tomb of Sargeras", 2, 110, 7},
+	[1188]={"Antorus, the Burning Throne", 2, 110, 7},
 }
