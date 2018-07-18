@@ -35,16 +35,31 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 			entranceInfo["name"] = hubName;
 
 			local description = "";
+			local dungeonCount = 0
+			local raidCount = 0
 
 			for m = 1, #subInstanceMapIDs do
 				local instanceID = subInstanceMapIDs[m]
 				local localizedName = EJ_GetInstanceInfo(instanceID);
 				local requiredLevel = IPUIInstanceMapDB[subInstanceMapIDs[m]][3]
-				description = description..localizedName.." |cFF888888("..requiredLevel..")|r\n"
+				local dungonType = IPUIInstanceMapDB[subInstanceMapIDs[m]][2];
+
+				if dungonType == 1 then
+					dungeonCount=dungeonCount+1
+					description = description..localizedName.." |cFF888888("..LFG_TYPE_DUNGEON.." - "..requiredLevel..")|r\n"
+				else
+					raidCount=raidCount+1
+					description = description..localizedName.." |cFF888888("..LFG_TYPE_RAID.." - "..requiredLevel..")|r\n"
+				end
 			end
 
 			entranceInfo["description"] = description;
-			entranceInfo["atlasName"] = "Raid";
+
+			if dungeonCount > raidCount then
+				entranceInfo["atlasName"] = "Dungeon";
+			else
+				entranceInfo["atlasName"] = "Raid";
+			end
 
 			entranceInfo["journalInstanceID"] = 0;
 			entranceInfo["hub"] = 1;
@@ -67,10 +82,10 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 			entranceInfo["position"] = CreateVector2D(x, y);
 			if (type == 1) then
 				entranceInfo["atlasName"] = "Dungeon";
-				entranceInfo["description"] = "Dungeon";
+				entranceInfo["description"] = LFG_TYPE_DUNGEON;
 			else
 				entranceInfo["atlasName"] = "Raid";
-				entranceInfo["description"] = "Raid";
+				entranceInfo["description"] = LFG_TYPE_RAID;
 			end
 
 			EJ_SelectTier(tier)
