@@ -6,7 +6,6 @@ function InstancePortalUI_OnLoad(self)
 
 	IPUIPrintDebug("InstancePortalUI_OnLoad()")
 	WorldMapFrame:AddDataProvider(CreateFromMixins(IPInstancePortalMapDataProviderMixin));
-
 end
 
 function IPUIPrintDebug(t)
@@ -38,9 +37,10 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 			local description = "";
 
 			for m = 1, #subInstanceMapIDs do
-				local name = IPUIInstanceMapDB[subInstanceMapIDs[m]][1]
+				local instanceID = subInstanceMapIDs[m]
+				local localizedName = EJ_GetInstanceInfo(instanceID);
 				local requiredLevel = IPUIInstanceMapDB[subInstanceMapIDs[m]][3]
-				description = description..name.." |cFF888888("..requiredLevel..")|r\n"
+				description = description..localizedName.." |cFF888888("..requiredLevel..")|r\n"
 			end
 
 			entranceInfo["description"] = description;
@@ -65,7 +65,6 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 
 			entranceInfo["areaPoiID"] = C_AreaPoiInfo.GetAreaPOIForMap(mapID)[0];
 			entranceInfo["position"] = CreateVector2D(x, y);
-			entranceInfo["name"] = name.." |cFF888888("..requiredLevel..")|r";
 			if (type == 1) then
 				entranceInfo["atlasName"] = "Dungeon";
 				entranceInfo["description"] = "Dungeon";
@@ -75,34 +74,18 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 			end
 
 			EJ_SelectTier(tier)
-			local instanceID = IPUIFindInstanceByName(name, (type == 2))
+			local instanceID = subInstanceMapIDs[m]
+
+			local localizedName = EJ_GetInstanceInfo(instanceID);
+
+			entranceInfo["name"] = localizedName.." |cFF888888("..requiredLevel..")|r";
 
 			entranceInfo["journalInstanceID"] = instanceID;
 			entranceInfo["tier"] = tier;
 			entranceInfo["hub"] = 0;
 
-			IPUIPrintDebug("Instance: " .. entranceInfo["name"]);
+			IPUIPrintDebug("Instance: " .. entranceInfo["name"].." id:"..instanceID);
 
 			return entranceInfo
 		end
 end
-
-function IPUIFindInstanceByName(name, isRaid)
-   if isRaid == nil then
-      local id = findInstanceByName(name, true)
-      if not id then id = findInstanceByName(name, false) end
-      return id
-   end
-   
-   local i = 1
-   local instanceId,instanceName = EJ_GetInstanceByIndex(i, isRaid)
-   name = name:lower()
-   
-   while instanceId do
-      if name == instanceName:lower() then return instanceId end
-      i = i + 1
-      instanceId, instanceName = EJ_GetInstanceByIndex(i, isRaid)        
-   end
-   return nil
-end
-
