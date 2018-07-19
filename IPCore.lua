@@ -4,8 +4,37 @@ function InstancePortalUI_OnLoad(self)
 	LoadAddOn("Blizzard_WorldMap")
 	self:RegisterEvent("ADDON_LOADED")
 
+	RegisterCVar("IPUITrackInstancePortals", "1")
+
 	IPUIPrintDebug("InstancePortalUI_OnLoad()")
 	WorldMapFrame:AddDataProvider(CreateFromMixins(IPInstancePortalMapDataProviderMixin));
+	hooksecurefunc("ToggleDropDownMenu", IPUIDropDownInit)
+
+end
+
+function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
+	local trackingOptionsFrame = WorldMapFrame.overlayFrames[2]
+	local trackingOptionsMenu = trackingOptionsFrame.DropDown
+
+	local function OnSelection(button)
+		SetCVar("IPUITrackInstancePortals", button.checked and "1" or "0", "INSTANCE_PORTAL_REFRESH");
+	end
+
+	if dropDownFrame == trackingOptionsMenu then
+
+		local info = UIDropDownMenu_CreateInfo();
+
+		UIDropDownMenu_AddSeparator();
+		info.isTitle = nil;
+		info.notCheckable = nil;
+		info.text = "Instance Portals";
+		info.isNotRadio = true;
+		info.checked = GetCVarBool("IPUITrackInstancePortals");
+		info.func = OnSelection;
+		info.keepShownOnClick = true;
+		info.value = "IPUITrackInstancePortals";
+		UIDropDownMenu_AddButton(info);
+	end
 end
 
 function IPUIPrintDebug(t)

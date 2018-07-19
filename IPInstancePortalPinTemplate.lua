@@ -4,8 +4,29 @@ function IPInstancePortalMapDataProviderMixin:RemoveAllData()
 	self:GetMap():RemoveAllPinsByTemplate("IPInstancePortalPinTemplate");
 end
 
+function IPInstancePortalMapDataProviderMixin:OnShow()
+	self:RegisterEvent("CVAR_UPDATE");
+end
+
+function IPInstancePortalMapDataProviderMixin:OnHide()
+	self:UnregisterEvent("CVAR_UPDATE");
+end
+
+function IPInstancePortalMapDataProviderMixin:OnEvent(event, ...)
+	if event == "CVAR_UPDATE" then
+		local eventName, value = ...;
+		if eventName == "INSTANCE_PORTAL_REFRESH" then
+			self:RefreshAllData();
+		end
+	end
+end
+
 function IPInstancePortalMapDataProviderMixin:RefreshAllData(fromOnShow)
 	self:RemoveAllData();
+
+	if not GetCVarBool("IPUITrackInstancePortals") then
+		return;
+	end
 
 	local mapID = self:GetMap():GetMapID();
 	IPUIPrintDebug("Map ID = "..mapID)
