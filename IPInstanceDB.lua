@@ -153,7 +153,6 @@ IPUIInstanceMapDB = {
 
 	--[[ Legion ]]--
 
-
 	[762]={"Darkheart Thicket", 1, 100, 7},
 	[716]={"Eye of Azshara", 1, 100, 7},
 	[721]={"Halls of Valor", 1, 100, 7},
@@ -175,4 +174,21 @@ IPUIInstanceMapDB = {
 	[786]={"The Nighthold", 2, 110, 7},
 	[875]={"Tomb of Sargeras", 2, 110, 7},
 	[946]={"Antorus, the Burning Throne", 2, 110, 7},
+
+	--[[ Battle for Azeroth ]]--
+
+	[968]={"Atal'Dazar", 1, 110, 8},
+	[1012]={"The MOTHERLODE!!", 1, 120, 8},
+	[1022]={"The Underrot", 1, 110, 8},
+	[1030]={"Temple of Sethraliss", 1, 110, 8},
+	[1041]={"Kings' Rest", 1, 120, 8},
+
+	[1001]={"Freehold", 1, 110, 8},
+	[1002]={"Tol Dagor", 1, 120, 8},
+	[1021]={"Waycrest Manor", 1, 110, 8},
+	[1023]={"Siege of Boralus", 1, 120, 8},
+	[1036]={"Shrine of the Storm", 1, 110, 8},
+
+	[1031]={"Uldir", 2, 120, 8},
+
 }

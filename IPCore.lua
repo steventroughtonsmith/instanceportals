@@ -27,7 +27,7 @@ function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 		UIDropDownMenu_AddSeparator();
 		info.isTitle = nil;
 		info.notCheckable = nil;
-		info.text = "Instance Portals";
+		info.text = DUNGEONS.." / "..RAIDS;
 		info.isNotRadio = true;
 		info.checked = GetCVarBool("IPUITrackInstancePortals");
 		info.func = OnSelection;

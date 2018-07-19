@@ -466,6 +466,39 @@ IPUIPinDB = {
 		{35, 64, {946}}, --Antorus, the Burning Throne
 	},
 
+
+
+	[875]={ --[[ Zandalar ]]--
+		{47, 79, {1012}}, --The MOTHERLODE!!! (Alliance)
+		{57, 72, {1012}}, --The MOTHERLODE!!! (Horde)
+		{50, 65, {968}}, --Atal'Dazar
+		{47, 64, {1041}}, --Kings' Rest
+		{40, 20, {1030}}, --Temple of Sethraliss
+		{60, 35, {1022}}, --The Underrot
+		{59, 31, {1031}}, --Uldir
+	},
+
+	[876]={ --[[ Kul Tiras ]]--
+		{60, 51, {1023}}, --Siege of Boralus (Alliance)
+		{68, 66, {1023}}, --Siege of Boralus (Horde)
+		{63, 84, {1001}}, --Freehold
+		{77, 62, {1002}}, --Tol Dagor
+		{30, 55, {1021}}, --Waycrest Manor
+		{65, 14, {1036}}, --Shrine of the Storm
+	},
+
+	[862]={ --[[ Zuldazar ]]--
+	},
+
+	[863]={ --[[ Nazmir ]]--
+	},
+
+	[864]={ --[[ Vol'dun ]]--
+	},
+
+	[1165]={ --[[ Dazar'alor ]]--
+	},
+
 	--[[ Former MicroDungeons ]]--
 	[75] = { --[[CavernsofTime ]]--
 			{26.49, 33.04, {251}}, -- old hillsbrad
