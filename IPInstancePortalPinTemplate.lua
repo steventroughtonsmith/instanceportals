@@ -24,9 +24,8 @@ end
 function IPInstancePortalMapDataProviderMixin:RefreshAllData(fromOnShow)
 	self:RemoveAllData();
 
-	if not GetCVarBool("IPUITrackInstancePortals") then
-		return;
-	end
+	local trackOnZones = GetCVarBool("IPUITrackInstancePortals")
+	local trackOnContinents = GetCVarBool("IPUITrackInstancePortalsOnContinents")
 
 	local mapID = self:GetMap():GetMapID();
 	IPUIPrintDebug("Map ID = "..mapID)
@@ -39,11 +38,33 @@ function IPInstancePortalMapDataProviderMixin:RefreshAllData(fromOnShow)
 
 	if IPUIPinDB[mapID] then
 		local count = #IPUIPinDB[mapID]
+		local isContinent = false;
+		for i = 1, #IPUIContinentMapDB do
+			if IPUIContinentMapDB[i] == mapID then
+				isContinent = true;
+			end
+		end
+		
+		IPUIPrintDebug("Map is continent = "..(isContinent and 'true' or 'false'))
+		local playerFaction = UnitFactionGroup("player")
 
 		for i = 1, count do
 			local entranceInfo = IPUIGetEntranceInfoForMapID(mapID, i);
+			
 			if entranceInfo then
-				self:GetMap():AcquirePin("IPInstancePortalPinTemplate", entranceInfo);
+				local factionWhitelist = entranceInfo["factionWhitelist"];
+				
+				local isWhitelisted = true;
+				
+				if factionWhitelist and not (factionWhitelist == playerFaction) then
+					isWhitelisted = false
+				end
+
+				if (isContinent and trackOnContinents) or (not isContinent and trackOnZones) then
+					if (isWhitelisted) then
+						self:GetMap():AcquirePin("IPInstancePortalPinTemplate", entranceInfo);
+					end
+				end
 			end
 		end
 	end

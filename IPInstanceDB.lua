@@ -177,18 +177,42 @@ IPUIInstanceMapDB = {
 
 	--[[ Battle for Azeroth ]]--
 
-	[968]={"Atal'Dazar", 1, 110, 8},
-	[1012]={"The MOTHERLODE!!", 1, 120, 8},
-	[1022]={"The Underrot", 1, 110, 8},
-	[1030]={"Temple of Sethraliss", 1, 110, 8},
 	[1041]={"Kings' Rest", 1, 120, 8},
-
-	[1001]={"Freehold", 1, 110, 8},
-	[1002]={"Tol Dagor", 1, 120, 8},
-	[1021]={"Waycrest Manor", 1, 110, 8},
-	[1023]={"Siege of Boralus", 1, 120, 8},
-	[1036]={"Shrine of the Storm", 1, 110, 8},
 
 	[1031]={"Uldir", 2, 120, 8},
 
+}
+
+IPUIInstanceFactionSpecificDB = {
+	["Horde"] = {
+		[968]={"Atal'Dazar", 1, 110, 8},
+		[1022]={"The Underrot", 1, 110, 8},
+		[1030]={"Temple of Sethraliss", 1, 110, 8},
+		
+		[1012]={"The MOTHERLODE!!", 1, 115, 8},
+
+		[1001]={"Freehold", 1, 120, 8},
+		[1021]={"Waycrest Manor", 1, 120, 8},
+		[1036]={"Shrine of the Storm", 1, 120, 8},
+		[1002]={"Tol Dagor", 1, 120, 8},
+
+		[1023]={"Siege of Boralus", 1, 120, 8},
+	},
+	
+	["Alliance"] = {
+	
+		[1001]={"Freehold", 1, 110, 8},
+		[1021]={"Waycrest Manor", 1, 110, 8},
+		[1036]={"Shrine of the Storm", 1, 110, 8},
+
+		[1002]={"Tol Dagor", 1, 115, 8},
+
+		[968]={"Atal'Dazar", 1, 120, 8},
+		[1012]={"The MOTHERLODE!!", 1, 120, 8},
+		[1022]={"The Underrot", 1, 120, 8},
+		[1030]={"Temple of Sethraliss", 1, 120, 8},
+		
+		[1023]={"Siege of Boralus", 1, 120, 8},
+	},
+	
 }

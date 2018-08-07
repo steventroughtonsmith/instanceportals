@@ -1,3 +1,5 @@
+IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876}
+
 IPUIPinDB = {
 
 	[12]={ --[[ KALIMDOR ]]--
@@ -469,22 +471,22 @@ IPUIPinDB = {
 
 
 	[875]={ --[[ Zandalar ]]--
-		{47, 79, {1012}}, --The MOTHERLODE!!! (Alliance)
-		{57, 72, {1012}}, --The MOTHERLODE!!! (Horde)
-		{50, 65, {968}}, --Atal'Dazar
+		{47, 79, {1012}, "Alliance"}, --The MOTHERLODE!!! (Alliance)
+		{57, 72, {1012}, "Horde"}, --The MOTHERLODE!!! (Horde)
+		{50, 65, {968}, "FactionSpecific"}, --Atal'Dazar
 		{47, 64, {1041}}, --Kings' Rest
-		{40, 20, {1030}}, --Temple of Sethraliss
-		{60, 35, {1022}}, --The Underrot
+		{40, 20, {1030}, "FactionSpecific"}, --Temple of Sethraliss
+		{60, 35, {1022}, "FactionSpecific"}, --The Underrot
 		{59, 31, {1031}}, --Uldir
 	},
 
 	[876]={ --[[ Kul Tiras ]]--
-		{60, 51, {1023}}, --Siege of Boralus (Alliance)
-		{68, 66, {1023}}, --Siege of Boralus (Horde)
-		{63, 84, {1001}}, --Freehold
+		{60, 51, {1023}, "Alliance"}, --Siege of Boralus (Alliance)
+		{68, 66, {1023}, "Horde"}, --Siege of Boralus (Horde)
+		{63, 84, {1001}, "FactionSpecific"}, --Freehold
 		{77, 62, {1002}}, --Tol Dagor
-		{30, 55, {1021}}, --Waycrest Manor
-		{65, 14, {1036}}, --Shrine of the Storm
+		{30, 55, {1021}, "FactionSpecific"}, --Waycrest Manor
+		{65, 14, {1036}, "FactionSpecific"}, --Shrine of the Storm
 	},
 
 	[862]={ --[[ Zuldazar ]]--
