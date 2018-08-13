@@ -28,7 +28,7 @@ function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 		UIDropDownMenu_AddSeparator();
 		info.isTitle = true;
 		info.notCheckable = true;
-		info.text = DUNGEONS.." / "..RAIDS..":";
+		info.text = DUNGEONS.." / "..RAIDS;
 		info.isNotRadio = true;
 		UIDropDownMenu_AddButton(info);
 		

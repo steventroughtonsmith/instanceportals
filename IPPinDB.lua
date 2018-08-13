@@ -342,10 +342,10 @@ IPUIPinDB = {
 
 	[424]={ --[[ PANDARIA ]]--
 		{68.49, 50.85, {313}},
-		{49.60, 67.31, {302}},
+		{48.07, 71.06, {302}},
 		{22.15, 48.74, {324}},
 		{32.62, 66.74, {330}}, --heart of fear
-		{38.49, 27.87, {312}},
+		{43.18, 28.65, {312}}, -- Shadow-Pan Monastery
 		{49, 26.53, {317}},
 		{55.98, 52.38, {321}},
 		{43.85, 57.55, {303}},
@@ -359,11 +359,11 @@ IPUIPinDB = {
 	},
 
 	[376]={ --[[ Valley of the Four Winds ]]--
-		{40, 65, {302}},
+		{36.01, 69.64, {302}},
 	},
 
 	[388]={ --[[ Townlong Steppes ]]--
-		{30, 80, {324}},
+		{34.14, 81.25, {324}},
 	},
 
 	[422]={ --[[ Dread Wastes ]]--
@@ -371,13 +371,13 @@ IPUIPinDB = {
 	},
 
 	[379]={ --[[ Kun-Lai Summit ]]--
-		{30, 40, {312}},
+		{36.92, 47.45, {312}}, -- Shadow-Pan Monastery
 		{60, 40, {317}},
 	},
 
 	[390]={ --[[ Vale of Eternal Blossoms ]]--
 		{79, 35, {321}},
-		{15, 80, {303}},
+		{15.85, 74.23, {303}},
 		{73.59, 42.04, {369}},
 	},
 
@@ -484,7 +484,7 @@ IPUIPinDB = {
 		{60, 51, {1023}, "Alliance"}, --Siege of Boralus (Alliance)
 		{68, 66, {1023}, "Horde"}, --Siege of Boralus (Horde)
 		{63, 84, {1001}, "FactionSpecific"}, --Freehold
-		{77, 62, {1002}}, --Tol Dagor
+		{77, 62, {1002}, "FactionSpecific"}, --Tol Dagor
 		{30, 55, {1021}, "FactionSpecific"}, --Waycrest Manor
 		{65, 14, {1036}, "FactionSpecific"}, --Shrine of the Storm
 	},
