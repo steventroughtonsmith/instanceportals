@@ -23,9 +23,10 @@ end
 
 function IPInstancePortalMapDataProviderMixin:RefreshAllData(fromOnShow)
 	self:RemoveAllData();
+	IPUIPrintDebug("IPInstancePortalMapDataProviderMixin:RefreshAllData")
 
-	local trackOnZones = GetCVarBool("IPUITrackInstancePortals")
-	local trackOnContinents = GetCVarBool("IPUITrackInstancePortalsOnContinents")
+	local trackOnZones = IPUITrackInstancePortals
+	local trackOnContinents = IPUITrackInstancePortalsOnContinents
 
 	local mapID = self:GetMap():GetMapID();
 	IPUIPrintDebug("Map ID = "..mapID)

@@ -483,7 +483,7 @@ IPUIPinDB = {
 	[876]={ --[[ Kul Tiras ]]--
 		{60, 51, {1023}, "Alliance"}, --Siege of Boralus (Alliance)
 		{68, 66, {1023}, "Horde"}, --Siege of Boralus (Horde)
-		{63, 84, {1001}, "FactionSpecific"}, --Freehold
+		{67.16, 80.46, {1001}, "FactionSpecific"}, --Freehold
 		{77, 62, {1002}, "FactionSpecific"}, --Tol Dagor
 		{30, 55, {1021}, "FactionSpecific"}, --Waycrest Manor
 		{65, 14, {1036}, "FactionSpecific"}, --Shrine of the Storm

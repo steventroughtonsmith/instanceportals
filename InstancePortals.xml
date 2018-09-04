@@ -10,6 +10,9 @@
         tinsert(UISpecialFrames, "InstancePortalUI")
         InstancePortalUI_OnLoad(self)
       </OnLoad>
+      <OnEvent>
+        InstancePortalUI_OnEvent(event, arg1)
+      </OnEvent>
     </Scripts>
   </Frame>
 

@@ -4,20 +4,40 @@ function InstancePortalUI_OnLoad(self)
 	LoadAddOn("Blizzard_WorldMap")
 	self:RegisterEvent("ADDON_LOADED")
 
-	RegisterCVar("IPUITrackInstancePortals", "1")
-	RegisterCVar("IPUITrackInstancePortalsOnContinents", "1")
-
 	IPUIPrintDebug("InstancePortalUI_OnLoad()")
 	WorldMapFrame:AddDataProvider(CreateFromMixins(IPInstancePortalMapDataProviderMixin));
 	hooksecurefunc("ToggleDropDownMenu", IPUIDropDownInit)
 
 end
 
+function InstancePortalUI_OnEvent(event, arg1)
+	if event == "ADDON_LOADED" then
+		if IPUITrackInstancePortals == nil then
+			IPUIPrintDebug("IPUISetDefaults()")
+			IPUITrackInstancePortals = true
+			IPUITrackInstancePortalsOnContinents = true
+		end
+		
+		IPUIPrintDebug("ADDON_LOADED()")
+
+		RegisterCVar("IPUITrackInstancePortals", IPUITrackInstancePortals)
+		RegisterCVar("IPUITrackInstancePortalsOnContinents", IPUITrackInstancePortalsOnContinents)
+	end
+end
+
 function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 	local trackingOptionsFrame = WorldMapFrame.overlayFrames[2]
 	local trackingOptionsMenu = trackingOptionsFrame.DropDown
 
+	IPUIPrintDebug("IPUIDropDownInit")
+
 	local function OnSelection(button)
+		if button.value == "IPUITrackInstancePortals" then
+			IPUITrackInstancePortals = button.checked
+		else
+			IPUITrackInstancePortalsOnContinents = button.checked
+		end
+
 		SetCVar(button.value, button.checked and "1" or "0", "INSTANCE_PORTAL_REFRESH");
 	end
 
@@ -37,7 +57,7 @@ function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 		info.notCheckable = nil;
 		info.text = "Show on Zone Map"; --BATTLEFIELD_MINIMAP
 		info.isNotRadio = true;
-		info.checked = GetCVarBool("IPUITrackInstancePortals");
+		info.checked = IPUITrackInstancePortals;
 		info.func = OnSelection;
 		info.keepShownOnClick = true;
 		info.value = "IPUITrackInstancePortals";
@@ -48,7 +68,7 @@ function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 		info.notCheckable = nil;
 		info.text = "Show on Continent Map"; --WORLD_MAP
 		info.isNotRadio = true;
-		info.checked = GetCVarBool("IPUITrackInstancePortalsOnContinents");
+		info.checked = IPUITrackInstancePortalsOnContinents;
 		info.func = OnSelection;
 		info.keepShownOnClick = true;
 		info.value = "IPUITrackInstancePortalsOnContinents";
