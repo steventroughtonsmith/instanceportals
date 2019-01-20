@@ -197,6 +197,8 @@ IPUIInstanceFactionSpecificDB = {
 		[1002]={"Tol Dagor", 1, 120, 8},
 
 		[1023]={"Siege of Boralus", 1, 120, 8},
+		
+		[1176]={"Battle of Dazar'alor", 2, 120, 8},
 	},
 	
 	["Alliance"] = {
@@ -213,6 +215,8 @@ IPUIInstanceFactionSpecificDB = {
 		[1030]={"Temple of Sethraliss", 1, 120, 8},
 		
 		[1023]={"Siege of Boralus", 1, 120, 8},
+		
+		[1176]={"Battle of Dazar'alor", 2, 120, 8},
 	},
 	
 }

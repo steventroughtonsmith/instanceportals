@@ -476,8 +476,10 @@ IPUIPinDB = {
 		{50, 65, {968}, "FactionSpecific"}, --Atal'Dazar
 		{47, 64, {1041}}, --Kings' Rest
 		{40, 20, {1030}, "FactionSpecific"}, --Temple of Sethraliss
-		{60, 35, {1022}, "FactionSpecific"}, --The Underrot
-		{59, 31, {1031}}, --Uldir
+		{58.19, 35.72, {1022}, "FactionSpecific"}, --The Underrot
+		{59.12, 34.92, {1031}}, --Uldir
+		
+		{55.13, 53.31, {1176}, "Horde"}, --Battle of Dazar'alor
 	},
 
 	[876]={ --[[ Kul Tiras ]]--
@@ -487,6 +489,8 @@ IPUIPinDB = {
 		{77, 62, {1002}, "FactionSpecific"}, --Tol Dagor
 		{30, 55, {1021}, "FactionSpecific"}, --Waycrest Manor
 		{65, 14, {1036}, "FactionSpecific"}, --Shrine of the Storm
+		
+		{61.25, 52.20, {1176}, "Alliance"}, --Battle of Dazar'alor
 	},
 
 	[862]={ --[[ Zuldazar ]]--
