@@ -20,8 +20,8 @@ function InstancePortalUI_OnEvent(event, arg1)
 		
 		IPUIPrintDebug("ADDON_LOADED()")
 
-		RegisterCVar("IPUITrackInstancePortals", IPUITrackInstancePortals)
-		RegisterCVar("IPUITrackInstancePortalsOnContinents", IPUITrackInstancePortalsOnContinents)
+		RegisterCVar("IPUITrackInstancePortals")
+		RegisterCVar("IPUITrackInstancePortalsOnContinents")
 	end
 end
 
