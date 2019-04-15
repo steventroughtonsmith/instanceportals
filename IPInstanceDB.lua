@@ -180,6 +180,9 @@ IPUIInstanceMapDB = {
 	[1041]={"Kings' Rest", 1, 120, 8},
 
 	[1031]={"Uldir", 2, 120, 8},
+	
+	[1177]={"Crucible of Storms", 2, 120, 8},
+
 
 }
 

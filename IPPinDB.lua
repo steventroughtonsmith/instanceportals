@@ -491,6 +491,9 @@ IPUIPinDB = {
 		{65, 14, {1036}, "FactionSpecific"}, --Shrine of the Storm
 		
 		{61.25, 52.20, {1176}, "Alliance"}, --Battle of Dazar'alor
+		
+		{67.16, 24.82, {1177}}, --Crucible of Storms
+
 	},
 
 	[862]={ --[[ Zuldazar ]]--
