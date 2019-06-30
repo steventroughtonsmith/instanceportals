@@ -183,6 +183,8 @@ IPUIInstanceMapDB = {
 	
 	[1177]={"Crucible of Storms", 2, 120, 8},
 
+	[1178]={"Operation: Mechagon", 1, 120, 8},
+	[1179]={"The Eternal Palace", 2, 120, 8},
 
 }
 

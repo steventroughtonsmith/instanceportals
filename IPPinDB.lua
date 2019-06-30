@@ -480,6 +480,8 @@ IPUIPinDB = {
 		{59.12, 34.92, {1031}}, --Uldir
 		
 		{55.13, 53.31, {1176}, "Horde"}, --Battle of Dazar'alor
+		
+		{86.11, 11.01, {1179}}, --The Eternal Palace
 	},
 
 	[876]={ --[[ Kul Tiras ]]--
@@ -494,6 +496,10 @@ IPUIPinDB = {
 		
 		{67.16, 24.82, {1177}}, --Crucible of Storms
 
+		{19.86, 26.75, {1178}}, --Operation: Mechagon
+
+		{86.11, 11.01, {1179}}, --The Eternal Palace
+
 	},
 
 	[862]={ --[[ Zuldazar ]]--
@@ -506,6 +512,9 @@ IPUIPinDB = {
 	},
 
 	[1165]={ --[[ Dazar'alor ]]--
+	},
+	
+	[1355]={ --[[ Nazjatar ]]--
 	},
 
 	--[[ Former MicroDungeons ]]--

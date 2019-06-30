@@ -1,6 +1,6 @@
-## Interface: 81000
+## Interface: 82000
 ## X-Min-Interface: 80000
-## Version: 22
+## Version: 23
 ## Title: Instance Portals
 ## Notes: Displays dungeon & raid portals on the world map
 ## SavedVariablesPerCharacter: IPUITrackInstancePortals IPUITrackInstancePortalsOnContinents 
