@@ -152,15 +152,15 @@ IPUIPinDB = {
 
 
 	[42]={ --[[ Deadwind Pass ]]--
-		{45.13, 75.16, {745}}, -- karazhan
+		--[[ {45.13, 75.16, {745}}, -- karazhan (REMOVED IN 8.3) ]]--
 		{47, 71, {860}}, -- Return to Karazhan
 	},
 
 
 
 	[81]={ --[[ Silithus ]]--
-		{36.19, 93.92, {743}}, -- ruins of ahnqiraj
-		{23.1, 86.3, {744}}, -- temple of ahnqiraj
+		--[[ {36.19, 93.92, {743}}, -- ruins of ahnqiraj (REMOVED IN 8.3) ]]--
+		--[[ {23.1, 86.3, {744}}, -- temple of ahnqiraj (REMOVED IN 8.3) ]]--
 	},
 
 	[101]={ --[[ OUTLAND ]]--
@@ -188,11 +188,11 @@ IPUIPinDB = {
 	},
 
 	[104]={ --[[ Shadowmoon Valley ]]--
-		{72.19, 44.91, {751}}, -- black temple
+		--[[ {72.19, 44.91, {751}}, -- black temple (REMOVED IN 8.3) ]]--
 	},
 
 	[105]={ --[[ Blade's Edge Mountains ]]--
-		{68.3, 23.4, {746}}, -- gruuls lair
+		--[[ {68.3, 23.4, {746}}, -- gruuls lair (REMOVED IN 8.3) ]]--
 	},
 
 
@@ -208,11 +208,11 @@ IPUIPinDB = {
 		{84.1, 70.6, {258}}, -- the mechanar
 		{82.3, 59.6, {254}}, -- the arcatraz
 		{72.6, 60, {257}}, -- the botanica
-		{76.53, 64.44, {749}}, -- the eye
+		--[[ {76.53, 64.44, {749}}, -- the eye (REMOVED IN 8.3) ]]--
 	},
 
 	[122]={ --[[ Quel'danas ]]--
-		{43.98, 46.25, {752}}, -- sunwell plateau
+		--[[ {43.98, 46.25, {752}}, -- sunwell plateau (REMOVED IN 8.3) ]]--
 		{60.7, 30.55, {249}}, -- magisters terrace
 	},
 
@@ -240,7 +240,7 @@ IPUIPinDB = {
 	},
 
 	[70]={ --[[ Dustwallow Marsh ]]--
-		{53, 77.65, {760}}, --onyxia
+		--[[ {53, 77.65, {760}}, --onyxia (REMOVED IN 8.3) ]]--
 	},
 
 	[116]={ --[[ Grizzly Hills ]]--
@@ -257,8 +257,8 @@ IPUIPinDB = {
 
 	[115]={ --[[ Dragonblight ]]--
 		{26.8, 48.5, {272,271}, "Azjol-Nerub"}, -- azjol-nerub,ahnkahet
-		{87.4, 46.4, {754}}, --naxxramas
-		{60, 56, {755,761}, "Wyrmrest Temple"}, --wymrest temple
+		--[[ {87.4, 46.4, {754}}, --naxxramas (REMOVED IN 8.3) ]]--
+		--[[ {60, 56, {755,761}, "Wyrmrest Temple"}, --wymrest temple (REMOVED IN 8.3) ]]--
 	},
 
 	[117]={ --[[ Howling Fjord ]]--
@@ -270,14 +270,14 @@ IPUIPinDB = {
 
 		{51.4, 88.3, {280,278,276}, "Icecrown Citadel"}, --forge of souls, pit of saron, halls of reflection
 		{74, 20.9, {284}}, --trial of champion
-		{75.2, 21.9, {757}}, --trial of crusader
-		{53.4, 85.8, {758}}, --ICC
+		--[[ {75.2, 21.9, {757}}, --trial of crusader (REMOVED IN 8.3) ]]--
+		--[[ {53.4, 85.8, {758}}, --ICC (REMOVED IN 8.3) ]]--
 	},
 
 	[120]={ --[[ Storm Peaks ]]--
 		{45.13, 19.78, {275}}, --halls of lightning
 		{37.73, 26.34, {277}}, --halls of stone
-		{41.5, 16.1, {759}}, --ulduar
+		--[[ {41.5, 16.1, {759}}, --ulduar (REMOVED IN 8.3) ]]--
 	},
 
 	[123]={ --[[ Wintergrasp ]]--
@@ -307,7 +307,7 @@ IPUIPinDB = {
 	},
 
 	[198]={ --[[ Mount Hyjal ]]--
-		{46.92, 79.76, {78}},
+		--[[ {46.92, 79.76, {78}}, --firelands (REMOVED IN 8.3) ]]--
 	},
 
 	[203]={ --[[ VASHJ'IR ]]--
@@ -323,13 +323,13 @@ IPUIPinDB = {
 	},
 
 	[241]={ --[[ Twilight Highlands ]]--
-		{19.86, 53.72, {71}},
-		{31.7, 67.5, {72}},
+		{19.86, 53.72, {71}}, -- grim batol
+		--[[ {31.7, 67.5, {72}}, --bastion of twilight (REMOVED IN 8.3) ]]--
 	},
 
 
 	[244]={ --[[ Tol Barad ]]--
-		{51.24, 49.88, {75}},
+		--[[ {51.24, 49.88, {75}}, -- baradin hold (REMOVED IN 8.3) ]]--
 	},
 
 
@@ -337,7 +337,13 @@ IPUIPinDB = {
 		{61.6, 69.2, {69}}, --lost city tol'vir
 		{70, 52.6, {70}}, --halls of origination
 		{76.4, 84.16, {68}}, --vortex pinnacle
-		{36, 82.25, {74}}, --throne four winds
+		--[[ {36, 82.25, {74}}, --throne four winds (REMOVED IN 8.3) ]]--
+	},
+	
+	[1527]={ --[[ Uldum Nzoth ]]--
+		{61.6, 69.2, {69}}, --lost city tol'vir
+		{70, 52.6, {70}}, --halls of origination
+		{76.4, 84.16, {68}}, --vortex pinnacle
 	},
 
 	[424]={ --[[ PANDARIA ]]--
@@ -367,22 +373,27 @@ IPUIPinDB = {
 	},
 
 	[422]={ --[[ Dread Wastes ]]--
-		{38.09, 37.07, {330}}, -- heart of fear
+		--[[ {38.09, 37.07, {330}}, -- heart of fear (REMOVED IN 8.3) ]]--
 	},
 
 	[379]={ --[[ Kun-Lai Summit ]]--
 		{36.92, 47.45, {312}}, -- Shadow-Pan Monastery
-		{60, 40, {317}},
+		--[[ {60, 40, {317}}, --mogushan vaults (REMOVED IN 8.3) ]]--
 	},
 
 	[390]={ --[[ Vale of Eternal Blossoms ]]--
 		{79, 35, {321}},
 		{15.85, 74.23, {303}},
-		{73.59, 42.04, {369}},
+		--[[ {73.59, 42.04, {369}}, -- SoO (REMOVED IN 8.3) ]]--
+	},
+	
+	[1530]={ --[[ Vale of Eternal Blossoms Nzoth ]]--
+		{79, 35, {321}},
+		{15.85, 74.23, {303}},
 	},
 
 	[433]={ --[[ The Veiled Stair ]]--
-		{48.83, 60.04, {320}},
+		--[[ {48.83, 60.04, {320}}, --terrace of endless spring (REMOVED IN 8.3) ]]--
 	},
 
 	[504]={ --[[ Isle of Thunder ]]--
@@ -407,7 +418,7 @@ IPUIPinDB = {
 		{50.36, 24.62, {385}},
 	},
 	[534]={ --[[ Tanaan Jungle ]]--
-		{46.79, 52.38, {669}},
+		--[[ {46.79, 52.38, {669}}, --HFC (REMOVED IN 8.3) ]]--
 	},
 	[535]={ --[[ Talador ]]--
 		{44.8, 74.5, {547}},
@@ -422,10 +433,10 @@ IPUIPinDB = {
 		{55.1, 30.4, {536}},
 		{44.9, 13.5, {558}},
 		{59.8, 45.2, {556}},
-		{51.4, 28.7, {457}},
+		--[[ {51.4, 28.7, {457}}, --BRF (REMOVED IN 8.3) ]]--
 	},
 	[550]={ --[[ Nagrand ]]--
-		{32.75, 34, {477}},
+		--[[ {32.75, 34, {477}}, --HM (REMOVED IN 8.3) ]]--
 	},
 
 
@@ -525,14 +536,14 @@ IPUIPinDB = {
 			{22.15, 63.87, {185}}, -- well of eternity
 			{68.49, 29.59, {186}}, -- hour of twilight
 			{57.26, 26.15, {184}}, -- end time
-			{39.64, 16.96, {750}}, -- battle for hyjal
-			{60.83, 20.98, {187}}, -- dragon soul
+			--[[ {39.64, 16.96, {750}}, -- battle for hyjal (REMOVED IN 8.3) ]]--
+			--[[ {60.83, 20.98, {187}}, -- dragon soul (REMOVED IN 8.3) ]]--
 		},
 
 	[33]={ -- blackrock spire
 			{78.83, 33.04, {559}}, -- UBRS
 			{81.51, 43.19, {229}}, -- LBRS
-			{63.89, 71.33, {742}}, -- BWL
+			--[[ {63.89, 71.33, {742}}, -- BWL (REMOVED IN 8.3) ]]--
 			{68.74, 63.48, {66}}, -- BRC (corridor)
 		},
 	[34]={ -- blackrock caverns
@@ -540,7 +551,7 @@ IPUIPinDB = {
 	},
 	[35]={ -- blackrock depths
 		{39.13, 17.72, {228}}, -- BRD
-		{53.55, 81.10, {741}}, -- MC
+		--[[ {53.55, 81.10, {741}}, -- MC (REMOVED IN 8.3) ]]--
 	},
 	--[13]={ --[[ Scarlet Monastery UNUSED ]]--
 	--	{68.23, 21.36, {316}}, -- SM
