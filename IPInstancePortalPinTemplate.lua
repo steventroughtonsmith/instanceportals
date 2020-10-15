@@ -45,6 +45,10 @@ function IPInstancePortalMapDataProviderMixin:RefreshAllData(fromOnShow)
 				isContinent = true;
 			end
 		end
+  
+        if not (isContinent) then
+            return
+        end
 		
 		IPUIPrintDebug("Map is continent = "..(isContinent and 'true' or 'false'))
 		local playerFaction = UnitFactionGroup("player")

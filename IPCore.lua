@@ -61,7 +61,7 @@ function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 		info.func = OnSelection;
 		info.keepShownOnClick = true;
 		info.value = "IPUITrackInstancePortals";
-		UIDropDownMenu_AddButton(info);
+		--UIDropDownMenu_AddButton(info);
 		
 		info = UIDropDownMenu_CreateInfo();
 		info.isTitle = nil;
@@ -127,10 +127,10 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 
 				if dungonType == 1 then
 					dungeonCount=dungeonCount+1
-					description = description..localizedName.." |cFF888888("..LFG_TYPE_DUNGEON.." - "..requiredLevel..")|r\n"
+					description = description..localizedName.." |cFF888888("..LFG_TYPE_DUNGEON..")|r\n"
 				else
 					raidCount=raidCount+1
-					description = description..localizedName.." |cFF888888("..LFG_TYPE_RAID.." - "..requiredLevel..")|r\n"
+					description = description..localizedName.." |cFF888888("..LFG_TYPE_RAID..")|r\n"
 				end
 			end
 
@@ -176,7 +176,7 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 
 			local localizedName = EJ_GetInstanceInfo(instanceID);
 
-			entranceInfo["name"] = localizedName.." |cFF888888("..requiredLevel..")|r";
+			entranceInfo["name"] = localizedName.."|r";
 
 			entranceInfo["journalInstanceID"] = instanceID;
 			entranceInfo["tier"] = tier;

@@ -1,4 +1,4 @@
-IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876}
+IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876, 1550}
 
 IPUIPinDB = {
 
@@ -581,4 +581,22 @@ IPUIPinDB = {
 	[68]={  --[[ MaraudonOutside FoulsporeCavern ]]--
 		{58.15, 32.66, {232}},
 	},
+ 
+ 
+     [1550]={ --[[ Shadowlands ]]--
+        {69, 60, {1182}}, --The Necrotic Wake
+        {74, 52, {1186}}, --Spires of Ascension
+        
+        {65, 26, {1183}}, --Plaguefall
+        {64, 22, {1187}}, --Theater of Pain
+        
+        {54, 86, {1188}}, --De Other Side
+        {45, 82, {1184}}, --Mists of Tirna Scithe
+
+        {31, 53, {1185}}, --Halls of Atonement
+        {27, 48, {1189}}, --Sanguine Depths
+
+        {23, 50, {1190}}, --Castle Nathria
+
+    }
 }
