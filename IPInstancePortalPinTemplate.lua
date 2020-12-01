@@ -87,9 +87,81 @@ function IPInstancePortalProviderPinMixin:OnAcquired(dungeonEntranceInfo) -- ove
 	self.journalInstanceID = dungeonEntranceInfo.journalInstanceID;
 end
 
-function IPInstancePortalProviderPinMixin:OnClick()
-	if self.hub == 0 then
-		EncounterJournal_LoadUI();
-		EncounterJournal_OpenJournal(nil, self.journalInstanceID)
+local function AddWaypoint(mapID, x, y, title, useTomTom)
+	if useTomTom and TomTom then
+		title = title or "Waypoint"
+		TomTom:AddWaypoint(mapID, x, y, {
+			title = title,
+			persistent = false,
+			minimap = true,
+			world = true,
+			from = "InstancePortals"
+		})
+	else
+		if C_Map.CanSetUserWaypointOnMap(mapID) then
+			local vector = CreateVector2D(x, y)
+			local mapPoint = UiMapPoint.CreateFromVector2D(mapID, vector)
+			C_Map.SetUserWaypoint(mapPoint)
+			local shouldSuperTrack = not C_SuperTrack.IsSuperTrackingUserWaypoint();
+			C_SuperTrack.SetSuperTrackedUserWaypoint(shouldSuperTrack)
+			if shouldSuperTrack then
+				PlaySound(SOUNDKIT.UI_MAP_WAYPOINT_SUPER_TRACK_ON, nil, SOUNDKIT_ALLOW_DUPLICATES);
+			else
+				PlaySound(SOUNDKIT.UI_MAP_WAYPOINT_SUPER_TRACK_OFF, nil, SOUNDKIT_ALLOW_DUPLICATES);
+			end
+		end
+	end
+end
+
+function IPInstancePortalProviderPinMixin:OnClick(button)
+	local useWaypoints = true
+	local useTomTom = true
+	local wp_mapid, wp_x, wp_y, wp_name	
+	useTomTom = useTomTom and (TomTom ~= nil) or false
+
+	if self.hub == 0 then	
+		if ((button == "RightButton") and (useWaypoints == true)) then
+			local uiMapID = self:GetMap():GetMapID();
+			if not uiMapID then return end
+			local mapChildren = C_Map.GetMapChildrenInfo(uiMapID, Enum.UIMapType.Zone)
+			if ( (type(mapChildren) ~= 'table') or (#mapChildren < 1) ) then return end
+			local journalInstanceID = self.journalInstanceID
+			if not journalInstanceID then return end			
+
+			for _, childMapInfo in ipairs(mapChildren) do
+				if childMapInfo then
+					local dungeonEntrances = C_EncounterJournal.GetDungeonEntrancesForMap(childMapInfo.mapID);
+					
+					for _, dungeonEntranceInfo in ipairs(dungeonEntrances) do
+						if dungeonEntranceInfo.journalInstanceID == journalInstanceID then
+							wp_mapid = childMapInfo.mapID
+							wp_x = dungeonEntranceInfo.position.x
+							wp_y = dungeonEntranceInfo.position.y
+							wp_name = dungeonEntranceInfo.name or "Waypoint"
+						end
+					end
+				end
+			end
+			
+			-- if no "dungeonEntranceInfo" is found, use Pin itself as Source
+			if (not wp_mapid) then
+				wp_mapid = self:GetMap():GetMapID();
+				wp_x, wp_y = self:GetPosition()
+				wp_name = self.name or "Waypoint"
+			end
+		else -- not "RightButton" or useWaypoints is false
+			EncounterJournal_LoadUI();
+			EncounterJournal_OpenJournal(nil, self.journalInstanceID)
+		end
+	else
+		if ((button == "RightButton") and (useWaypoints == true)) then
+			wp_mapid = self:GetMap():GetMapID();
+			wp_x, wp_y = self:GetPosition()
+			wp_name = self.name or "Waypoint"
+		end
+	end
+	
+	if ((button == "RightButton") and (useWaypoints == true)) and wp_mapid and wp_x and wp_y and wp_name then
+		AddWaypoint(wp_mapid, wp_x, wp_y, wp_name, useTomTom)
 	end
 end
