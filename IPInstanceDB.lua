@@ -199,8 +199,12 @@ IPUIInstanceMapDB = {
 
     [1185]={"Halls of Atonement", 1, 60, 9},
     [1189]={"Sanguine Depths", 1, 60, 9},
+		
+		[1194]={"Tazavesh, the Veiled Market", 1, 60, 9},
 
     [1190]={"Castle Nathria", 2, 60, 9},
+    [1193]={"Sanctum of Domination", 2, 60, 9},
+    [1195]={"Sepulcher of the First Ones", 2, 60, 9},
 
 }
 

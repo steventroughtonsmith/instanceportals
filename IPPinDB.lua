@@ -611,21 +611,30 @@ IPUIPinDB = {
  
 	[1550]={ --[[ Shadowlands ]]--
 		-- Ardenweald 
-		{54.446888, 86.067420, {1188}}, -- De Other Side 
-		{44.641620, 82.380521, {1184}}, -- Mists of Tirna Scithe 
+		{54.446888, 86.067420, {1188}}, -- De Other Side
+		{44.641620, 82.380521, {1184}}, -- Mists of Tirna Scithe
 
 		-- Maldraxxus 
-		{64.926732, 26.361662, {1183}}, -- Plaguefall 
-		{63.286728, 23.205620, {1187}}, -- Theater of Pain 
+		{64.926732, 26.361662, {1183}}, -- Plaguefall
+		{63.286728, 23.205620, {1187}}, -- Theater of Pain
 
 		-- Bastion 
-		{74.077868, 52.558160, {1186}}, -- Spires of Ascension 
+		{74.077868, 52.558160, {1186}}, -- Spires of Ascension
 		{68.996882, 59.912443, {1182}}, -- The Necrotic Wake 
 
 		-- Revendreth 
 		{31.328863, 52.883035, {1185}}, -- Halls of Atonement 
-		{24.945801, 48.466653, {1189}}, -- Sanguine Depths 
-		{23.900000, 51.100000, {1190}}, --Castle Nathria
+		{24.945801, 48.466653, {1189}}, -- Sanguine Depths
+		{23.900000, 51.100000, {1190}}, -- Castle Nathria
+		
+		-- Maw
+		{28.100000, 09.200000, {1193}}, -- Sanctum of Domination
+		
+		-- Tazavesh, the Veiled Market
+		{31.940000, 76.010000, {1194}}, -- Tazavesh, the Veiled Market
+		
+		-- Zereth Mortis
+		{89.000000, 80.000000, {1195}}, -- Sepulcher of the First Ones
 		
     }
 }
