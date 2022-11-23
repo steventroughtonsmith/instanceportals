@@ -188,24 +188,36 @@ IPUIInstanceMapDB = {
 
 	[1180]={"Ny'alotha, The Waking City", 2, 120, 8},
 
-    --[[ Shadowlands ]]--
+	--[[ Shadowlands ]]--
 
-    [1182]={"The Necrotic Wake", 1, 60, 9},
-    [1186]={"Spires of Ascension", 1, 60, 9},
-    [1183]={"Plaguefall", 1, 60, 9},
-    [1187]={"Theater of Pain", 1, 60, 9},
-    [1184]={"Mists of Tirna Scithe", 1, 60, 9},
-    [1188]={"De Other Side", 1, 60, 9},
+	[1182]={"The Necrotic Wake", 1, 60, 9},
+	[1186]={"Spires of Ascension", 1, 60, 9},
+	[1183]={"Plaguefall", 1, 60, 9},
+	[1187]={"Theater of Pain", 1, 60, 9},
+	[1184]={"Mists of Tirna Scithe", 1, 60, 9},
+	[1188]={"De Other Side", 1, 60, 9},
 
-    [1185]={"Halls of Atonement", 1, 60, 9},
-    [1189]={"Sanguine Depths", 1, 60, 9},
-		
-		[1194]={"Tazavesh, the Veiled Market", 1, 60, 9},
+	[1185]={"Halls of Atonement", 1, 60, 9},
+	[1189]={"Sanguine Depths", 1, 60, 9},
+	
+	[1194]={"Tazavesh, the Veiled Market", 1, 60, 9},
 
-    [1190]={"Castle Nathria", 2, 60, 9},
-    [1193]={"Sanctum of Domination", 2, 60, 9},
-    [1195]={"Sepulcher of the First Ones", 2, 60, 9},
-
+	[1190]={"Castle Nathria", 2, 60, 9},
+	[1193]={"Sanctum of Domination", 2, 60, 9},
+	[1195]={"Sepulcher of the First Ones", 2, 60, 9},
+	
+	--[[ Dragon Isles ]]--
+	
+	[1196]={"Brackenhide Hollow", 1, 60, 10},
+	[1198]={"The Nokhud Offensive", 1, 60, 10},
+	[1199]={"Neltharus", 1, 60, 10},	
+	[1201]={"Algeth'ar Academy", 1, 60, 10},
+	[1202]={"Ruby Life Pools", 1, 60, 10},
+	[1203]={"The Azure Vault", 1, 60, 10},
+	[1204]={"Halls of Infusion", 1, 60, 10},
+	
+	[1200]={"Vault of the Incarnates", 2, 60, 10},
+	
 }
 
 IPUIInstanceFactionSpecificDB = {

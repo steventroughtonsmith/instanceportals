@@ -1,4 +1,4 @@
-IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876, 1550}
+IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876, 1550, 1978}
 
 IPUIPinDB = {
 
@@ -636,5 +636,24 @@ IPUIPinDB = {
 		-- Zereth Mortis
 		{89.000000, 80.000000, {1195}}, -- Sepulcher of the First Ones
 		
-    }
+	},
+	 
+	[1978]={ --[[ Dragon Isles  ]]--
+		-- The Walking Shore
+		{42.143745018467, 35.674487808132, {1199}}, -- Neltharus
+		{52.909352674978, 41.753505978421, {1202}}, -- Ruby Life Pools
+
+		-- Taldraszus
+		{63.281882669086, 41.734546447436, {1201}}, -- Algeth'ar Academy
+		{63.654679188667, 48.978011127175, {1204}}, -- Halls of Infusion
+		{69.870329020185, 46.807002765369, {1200}}, -- Vault of the Incarnates (Raid)
+
+		-- The Azure Span		
+		{47.421586086518, 82.733546450360, {1203}}, -- The Azure Vault
+		{35.719918658531, 76.005899033001, {1196}}, -- Brackenhide Hollow
+
+		-- Ohn'ahran Plains
+		{43.678347131592, 52.886746779309, {1198}}, -- The Nokhud Offensive
+		
+	}
 }
