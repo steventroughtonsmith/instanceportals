@@ -598,5 +598,7 @@ IPUIPinDB = {
 
         {23, 50, {1190}}, --Castle Nathria
 
-    }
+		{89,80, {0}}, -- Sepulcher of the First Ones
+
+    },
 }
