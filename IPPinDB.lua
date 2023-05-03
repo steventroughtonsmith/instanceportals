@@ -598,6 +598,8 @@ IPUIPinDB = {
 
         {23, 50, {1190}}, --Castle Nathria
 
+		{32, 75, {0}}, -- Tazavesh, the Veiled Market
+
 		{89,80, {0}}, -- Sepulcher of the First Ones
 
     },
