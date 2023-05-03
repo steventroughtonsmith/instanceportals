@@ -122,7 +122,7 @@ IPUIPinDB = {
 		{44.36, 73.44, {63}}, -- deadmines
 	},
 
-	[50]={ --[[ Elwynn Forest ]]--
+	[37]={ --[[ Elwynn Forest ]]--
 		{18.32, 29.21, {238}}, -- stockade
 	},
 
