@@ -200,23 +200,23 @@ IPUIInstanceMapDB = {
     [1185]={"Halls of Atonement", 1, 60, 9},
     [1189]={"Sanguine Depths", 1, 60, 9},
 
-	[0]={"Tazavesh, the Veiled Market", 1, 60, 9},
+	[1194]={"Tazavesh, the Veiled Market", 1, 60, 9},
 
     [1190]={"Castle Nathria", 2, 60, 9},
-	[0]={"Sepulcher of the First Ones", 2, 60, 9},
+	[1193]={"Sepulcher of the First Ones", 2, 60, 9},
 
 	-- [[ Dragonflight ]] --
 
-	[0]={"Halls of Infusion", 1, 70, 10},
-	[0]={"Algeth'ar Academy", 1, 70, 10},
-	[0]={"Brackenhide Hollow", 1, 70, 10},
-	[0]={"Neltharus", 1, 70, 10},
-	[0]={"Ruby Life Pools", 1, 70, 10},
-	[0]={"The Azure Vault", 1, 70, 10},
-	[0]={"The Nokhud Offensive", 1, 70, 10},
+	[1204]={"Halls of Infusion", 1, 70, 10},
+	[1201]={"Algeth'ar Academy", 1, 70, 10},
+	[1196]={"Brackenhide Hollow", 1, 70, 10},
+	[1199]={"Neltharus", 1, 70, 10},
+	[1202]={"Ruby Life Pools", 1, 70, 10},
+	[1203]={"The Azure Vault", 1, 70, 10},
+	[1198]={"The Nokhud Offensive", 1, 70, 10},
 
-	[0]={"Vault of the Incarnates", 2, 70, 10},
-	[0]={"Aberrus, the Shadowed Crucible", 2, 70, 10},
+	[1200]={"Vault of the Incarnates", 2, 70, 10},
+	[1205]={"Aberrus, the Shadowed Crucible", 2, 70, 10},
 
 }
 
