@@ -598,23 +598,23 @@ IPUIPinDB = {
 
         {23, 50, {1190}}, --Castle Nathria
 
-		{32, 75, {0}}, -- Tazavesh, the Veiled Market
+		{32, 75, {1194}}, -- Tazavesh, the Veiled Market
 
-		{89,80, {0}}, -- Sepulcher of the First Ones
+		{89,80, {1193}}, -- Sepulcher of the First Ones
 
     },
 
 	[1978]={ --[[ Dragon Isles ]]--
-		{63, 49, {0}}, -- Halls of Infusion
-		{62, 41, {0}}, -- Algeth'ar Academy
-		{37, 75, {0}}, -- Brackenhide Hollow
-		{43, 36, {0}}, -- Neltharus
-		{52, 42, {0}}, -- Ruby Life Pools
-		{47, 83, {0}}, -- The Azure Vault
-		{45, 52, {0}}, -- The Nokhud Offensive
+		{63, 49, {1204}}, -- Halls of Infusion
+		{62, 41, {1201}}, -- Algeth'ar Academy
+		{37, 75, {1196}}, -- Brackenhide Hollow
+		{43, 36, {1199}}, -- Neltharus
+		{52, 42, {1202}}, -- Ruby Life Pools
+		{47, 83, {1203}}, -- The Azure Vault
+		{45, 52, {1198}}, -- The Nokhud Offensive
 
-		{69, 47, {0}}, -- Vault of the Incarnates
+		{69, 47, {1200}}, -- Vault of the Incarnates
 
-		{87, 74, {0}}, -- Aberrus, the Shadowed Crucible
+		{87, 74, {1205}}, -- Aberrus, the Shadowed Crucible
 	}
 }
