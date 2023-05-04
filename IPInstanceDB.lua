@@ -207,15 +207,15 @@ IPUIInstanceMapDB = {
 
 	-- [[ Dragonflight ]] --
 
-	[1204]={"Halls of Infusion", 1, 60, 10},
-	[1201]={"Algeth'ar Academy", 1, 60, 10},
-	[1196]={"Brackenhide Hollow", 1, 60, 10},
-	[1199]={"Neltharus", 1, 60, 10},
-	[1202]={"Ruby Life Pools", 1, 60, 10},
-	[1203]={"The Azure Vault", 1, 60, 10},
-	[1198]={"The Nokhud Offensive", 1, 60, 10},
+	[1204]={"Halls of Infusion", 1, 70, 10},
+	[1201]={"Algeth'ar Academy", 1, 70, 10},
+	[1196]={"Brackenhide Hollow", 1, 70, 10},
+	[1199]={"Neltharus", 1, 70, 10},
+	[1202]={"Ruby Life Pools", 1, 70, 10},
+	[1203]={"The Azure Vault", 1, 70, 10},
+	[1198]={"The Nokhud Offensive", 1, 70, 10},
 
-	[1200]={"Vault of the Incarnates", 2, 60, 10},
+	[1200]={"Vault of the Incarnates", 2, 70, 10},
 	[1205]={"Aberrus, the Shadowed Crucible", 2, 70, 10},
 
 }
