@@ -1,4 +1,4 @@
-IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876, 1550}
+IPUIContinentMapDB = {12, 13, 101, 113, 424, 572, 619, 905, 875, 876, 1550, 1978, 2274}
 
 IPUIPinDB = {
 
@@ -49,6 +49,8 @@ IPUIPinDB = {
 		{54.45, 79.37, {237}}, -- sunken temple
 		{53.17, 30.36, {236}}, -- stratholme
 		{52.73, 65.19, {239}}, -- uldaman
+		{51.8, 64.1, {1197}}, -- uldaman legacy of tyr
+
 		{40.92, 41.66, {64}}, -- shadowfang keep
 		{43.21, 60.42, {231}}, -- gnomeregan
 		{41.3, 82.63, {63}}, -- deadmines
@@ -600,6 +602,23 @@ IPUIPinDB = {
 		{26, 16, {1193}}, --Sanctum of Domination
 		{48, 53, {1194}}, --Tazavesh
 		{89.44, 80, {1195}}, --Sepulcher of the First Ones
-    }
+    },
     
+	[1978]={ --[[ Dragon Isles ]]--
+		
+		{63, 49, {1204}}, -- Halls of Infusion
+		{64, 40, {1201}}, -- Algeth'ar Academy
+		{37, 75, {1196}}, -- Brackenhide Hollow
+		{43, 36, {1199}}, -- Neltharus
+		{52, 42, {1202}}, -- Ruby Life Pools
+		{47, 83, {1203}}, -- The Azure Vault
+		{45, 52, {1198}}, -- The Nokhud Offensive
+				
+		{65, 57, {1209}}, -- Dawn of the Infinite
+
+		{70, 46, {1200}}, --Vault of the Incarnates
+		{86.7, 73.4, {1208}}, --Aberrus
+		{31, 57, {1207}}, --Amirdrassil
+	},
+
 }

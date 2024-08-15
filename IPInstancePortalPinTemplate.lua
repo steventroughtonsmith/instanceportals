@@ -4,11 +4,20 @@ function IPInstancePortalMapDataProviderMixin:RemoveAllData()
 	self:GetMap():RemoveAllPinsByTemplate("IPInstancePortalPinTemplate");
 end
 
+function IPInstancePortalMapDataProviderMixin:OnLoad()
+	BaseMapPoiPinMixin.OnLoad(self);
+
+	self:SetNudgeSourceRadius(1);
+	self:SetNudgeSourceMagnitude(2, 2);
+end
+
 function IPInstancePortalMapDataProviderMixin:OnShow()
+	CVarMapCanvasDataProviderMixin.OnShow(self);
 	self:RegisterEvent("CVAR_UPDATE");
 end
 
 function IPInstancePortalMapDataProviderMixin:OnHide()
+	CVarMapCanvasDataProviderMixin.OnHide(self);
 	self:UnregisterEvent("CVAR_UPDATE");
 end
 

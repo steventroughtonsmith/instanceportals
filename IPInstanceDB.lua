@@ -205,6 +205,25 @@ IPUIInstanceMapDB = {
 	[1193]={"Sanctum of Domination", 2, 60, 9},
 	[1194]={"Tazavesh, the Veiled Market", 1, 60, 9},
 	[1195]={"Sepulcher of the First Ones", 2, 60, 9},
+	
+	-- [[ Dragonflight ]] --
+
+	[1204]={"Halls of Infusion", 1, 70, 10},
+	[1203]={"The Azure Vault", 1, 70, 10},
+	
+	[1201]={"Algeth'ar Academy", 1, 70, 10},
+	
+	[1197]={"Uldaman: Legacy of Tyr", 1, 70, 10},
+	[1196]={"Brackenhide Hollow", 1, 70, 10},
+	[1199]={"Neltharus", 1, 70, 10},
+	[1202]={"Ruby Life Pools", 1, 70, 10},
+	
+	[1198]={"The Nokhud Offensive", 1, 70, 10},
+	[1209]={"Dawn of the Infinite", 1, 70, 10},
+
+	[1200]={"Vault of the Incarnates", 2, 70, 10},
+	[1208]={"Aberrus, the Shadowed Crucible", 2, 70, 10},
+	[1207]={"Amirdrassil, the Dream's Hope", 2, 70, 10},
 }
 
 IPUIInstanceFactionSpecificDB = {

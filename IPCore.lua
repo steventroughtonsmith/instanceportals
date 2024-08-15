@@ -86,11 +86,12 @@ end
 
 function IPUIPrintDebug(t)
 	if (IPUIDebug) then
-		print(t)
+		print("IPUIDEBUG - "..t)
 	end
 end
 
 function IPUIGetEntranceInfoForMapID(mapID, i)
+		IPUIPrintDebug("IPUIGetEntranceInfoForMapID:"..mapID)
 
 		instancePortal = IPUIPinDB[mapID][i]
 		if not (instancePortal) then
@@ -107,14 +108,19 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 		local playerFaction = UnitFactionGroup("player")
 
 		if hubName == "FactionSpecific" then
+			IPUIPrintDebug("FactionSpecific for map: "..mapID)
 			factionWhitelist = playerFaction;
 			desired_IPUIInstanceMapDB = IPUIInstanceFactionSpecificDB[factionWhitelist];
 			hubName = nil
 		elseif hubName == "Alliance" or hubName == "Horde" then
-			factionWhitelist = hubName;
+			IPUIPrintDebug("HubName:"..hubName.." for map: "..mapID)
+		factionWhitelist = hubName;
 			desired_IPUIInstanceMapDB = IPUIInstanceFactionSpecificDB[factionWhitelist];
 			hubName = nil
 		end
+		
+		IPUIPrintDebug("A")
+
 		
 		if hubName then
 			entranceInfo = {};
@@ -158,6 +164,9 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 
 			return entranceInfo
 		end
+		
+		IPUIPrintDebug("B")
+
 
 		local m = 1
 		if desired_IPUIInstanceMapDB[subInstanceMapIDs[m]] then
@@ -195,4 +204,7 @@ function IPUIGetEntranceInfoForMapID(mapID, i)
 
 			return entranceInfo
 		end
+		
+		IPUIPrintDebug("C")
+
 end
