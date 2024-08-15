@@ -582,7 +582,6 @@ IPUIPinDB = {
 		{58.15, 32.66, {232}},
 	},
  
- 
      [1550]={ --[[ Shadowlands ]]--
         {69, 60, {1182}}, --The Necrotic Wake
         {74, 52, {1186}}, --Spires of Ascension
@@ -597,6 +596,10 @@ IPUIPinDB = {
         {27, 48, {1189}}, --Sanguine Depths
 
         {23, 50, {1190}}, --Castle Nathria
-
+	
+		{26, 16, {1193}}, --Sanctum of Domination
+		{48, 53, {1194}}, --Tazavesh
+		{89.44, 80, {1195}}, --Sepulcher of the First Ones
     }
+    
 }

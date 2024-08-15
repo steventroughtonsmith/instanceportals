@@ -87,9 +87,38 @@ function IPInstancePortalProviderPinMixin:OnAcquired(dungeonEntranceInfo) -- ove
 	self.journalInstanceID = dungeonEntranceInfo.journalInstanceID;
 end
 
-function IPInstancePortalProviderPinMixin:OnClick()
-	if self.hub == 0 then
-		EncounterJournal_LoadUI();
-		EncounterJournal_OpenJournal(nil, self.journalInstanceID)
+function IPInstancePortalProviderPinMixin:OnMouseClickAction(button)
+	IPUIPrintDebug(button)
+
+	if button == "LeftButton" then
+		
+		--local mapPoiVector = CreateVector2D(0,0)
+		--local mapPoiMap = 0
+		--if C_Map.CanSetUserWaypointOnMap() then
+		--	local pt = UiMapPoint.CreateFromVector2D(mapPoiMap, mapPoiVector)
+		--	C_Map.SetUserWaypoint(pt)
+		--end
+	else
+		if self.hub == 0 then
+			EncounterJournal_LoadUI();
+			EncounterJournal_OpenJournal(nil, self.journalInstanceID)
+		end
 	end
 end
+
+function IPInstancePortalProviderPinMixin:ShouldMouseButtonBePassthrough(button)
+	return false
+end
+
+function IPInstancePortalProviderPinMixin:UseTooltip()
+	return true
+end
+
+function IPInstancePortalProviderPinMixin:GetTooltipInstructions()
+	if self.hub == 1 then
+		return ""
+	else
+		return "<Right click to open Adventure Guide>"
+	end
+end
+
