@@ -1,6 +1,7 @@
 local IPUIDebug=false
 
 function InstancePortalUI_OnLoad(self)
+	local LoadAddOn = C_AddOns.LoadAddOn or LoadAddOn
 	LoadAddOn("Blizzard_WorldMap")
 	self:RegisterEvent("ADDON_LOADED")
 
@@ -28,6 +29,13 @@ end
 function IPUIDropDownInit(_, _, dropDownFrame, _, _, _, _, clickedButton)
 	local trackingOptionsFrame = WorldMapFrame.overlayFrames[2]
 	local trackingOptionsMenu = trackingOptionsFrame.DropDown
+
+	local _, _, _, tocVersion = GetBuildInfo()
+
+	--Quick fix for issue with Skada and others
+	if tocVersion >= 110000 then
+		return
+	end
 
 	IPUIPrintDebug("IPUIDropDownInit")
 
