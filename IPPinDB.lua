@@ -620,5 +620,21 @@ IPUIPinDB = {
 		{86.7, 73.4, {1208}}, --Aberrus
 		{31, 57, {1207}}, --Amirdrassil
 	},
+	
+	[2274]={ --[[ Khaz Algar ]]--
+		{84, 20, {1272}}, -- Cinderbrew Meadery
+		{69, 18, {1268}}, -- The Rookery
+		
+		{53, 43, {1269}}, -- The Stonevault
+		{57.5, 46, {1210}}, -- Darkflame Cleft
+
+		{40, 57, {1270}}, -- The Dawnbreaker
+		{34, 53, {1267}}, -- Priory of the Sacred Flame
+
+		{45, 82, {1271}}, -- Ara-Kara, City of Echoes
+		{44, 80, {1274}}, -- City of Threads
+		{44, 84, {1273}}, -- Nerub-ar Palace
+
+	}
 
 }

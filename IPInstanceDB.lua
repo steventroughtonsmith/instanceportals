@@ -224,6 +224,22 @@ IPUIInstanceMapDB = {
 	[1200]={"Vault of the Incarnates", 2, 70, 10},
 	[1208]={"Aberrus, the Shadowed Crucible", 2, 70, 10},
 	[1207]={"Amirdrassil, the Dream's Hope", 2, 70, 10},
+	
+	-- [[ The War Within ]] --
+
+	[1272]={"Cinderbrew Meadery", 1, 80, 11},
+	[1268]={"The Rookery", 1, 80, 11},
+	
+	[1269]={"The Stonevault", 1, 80, 11},
+	[1210]={"Darkflame Cleft", 1, 80, 11},
+	
+	[1270]={"The Dawnbreaker", 1, 80, 11},
+	[1267]={"Priory of the Sacred Flame", 1, 80, 11},
+	
+	[1271]={"Ara-Kara, City of Echoes", 1, 80, 11},
+	[1274]={"City of Threads", 1, 80, 11},
+	[1273]={"Nerub-ar Palace", 2, 80, 11},
+
 }
 
 IPUIInstanceFactionSpecificDB = {
